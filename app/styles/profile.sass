@@ -1,0 +1,66 @@
+@import compass/css3
+
+$linePadding: 21px
+$nameColor: #6D6D6D
+$projectColor: #4A4A4A
+
+.profile
+  // min-height: 100%
+  padding-top: 80px
+
+  .skills
+    margin-top: 110px
+
+    .skill
+      width: 100%
+      overflow: auto
+      margin-bottom: 35px
+
+      .name,.projects
+        width: 50%
+        +box-sizing(border-box)
+        float: left
+
+      .name
+        text-align: right
+        padding-right: $linePadding
+        font-family: Avenir-Roman
+        font-size: 21px
+        color: $nameColor
+        -webkit-font-smoothing: antialiased
+
+      .projects
+        text-align: left
+        padding-left: $linePadding
+
+        .project
+          margin-bottom: 14px
+
+          .title
+            font-size: 18px
+            line-height: 25px
+            margin-top: 1px
+
+          .description
+            font-size: 14px
+            line-height: 19px
+
+          .links
+            margin-top: 3px
+
+            .link
+              font-size: 14px
+              line-height: 19px
+              line-height: 16px
+
+              &.code
+                margin-right: 19px
+
+
+  svg  
+    height: 100%
+    width: $linePadding * 2
+    // background-color: gray
+    position: absolute
+    left: 50%
+    margin-left: -$linePadding

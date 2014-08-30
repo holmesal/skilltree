@@ -1,0 +1,26 @@
+<div class="profile">
+
+<line></line>
+
+<div class="skills">
+
+  <div class="skill" ng-repeat="skill in skills">
+    <div class="name">
+      {{skill.name}}
+    </div>
+    <div class="projects">
+
+      <div class="project" ng-repeat="project in skill.projects">
+        <p class="title">{{project.title}}</p>
+        <p class="description">{{project.description}}</p>
+        <div class="links">
+          <a class="link code" ng-href="project.links.code">view code</a>
+          <a class="link site" ng-href="project.links.site">{{project.links.site}}</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div>
