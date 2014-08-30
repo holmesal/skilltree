@@ -3,10 +3,22 @@
 $linePadding: 21px
 $nameColor: #6D6D6D
 $projectColor: #4A4A4A
+$photoSize: 84px
 
 .profile
   // min-height: 100%
   padding-top: 80px
+
+  .person 
+
+    .photo
+      margin-left: auto 
+      margin-right: auto 
+      width: $photoSize
+      height: $photoSize
+      background-position: center center
+      background-size: cover
+      border-radius: 50%
 
   .skills
     margin-top: 110px
@@ -16,7 +28,7 @@ $projectColor: #4A4A4A
       overflow: auto
       margin-bottom: 35px
 
-      .name,.projects
+      .name,projects
         width: 50%
         +box-sizing(border-box)
         float: left
@@ -29,9 +41,10 @@ $projectColor: #4A4A4A
         color: $nameColor
         -webkit-font-smoothing: antialiased
 
-      .projects
+      projects
         text-align: left
         padding-left: $linePadding
+        position: relative
 
         .project
           margin-bottom: 14px
@@ -56,11 +69,22 @@ $projectColor: #4A4A4A
               &.code
                 margin-right: 19px
 
+        svg 
+          width: $linePadding * 2
+          position: absolute
+          left: 0
+          margin-left: -$linePadding
+          top: 0
+          bottom: 0
+          height: 100%
+          // background-color: gray
 
-  svg  
+
+  #lineSvg  
     height: 100%
     width: $linePadding * 2
-    // background-color: gray
     position: absolute
     left: 50%
     margin-left: -$linePadding
+    z-index: 0
+    padding-top: $photoSize

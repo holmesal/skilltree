@@ -33,12 +33,16 @@ angular.module('skilltreeApp')
           @drawFaded()
 
         drawFaded: ->
-          @faded = @s.line @dims.w/2, 0, @dims.w/2, @dims.h
+          @faded = @s.line @dims.w/2, 0, @dims.w/2, 0
 
           @faded.attr
             stroke: '#4A4A4A'
             opacity: 0.17
             strokeWidth: 0.5
+
+          @faded.animate
+            y2: @dims.h 
+          , 1000
 
       new Line
   )

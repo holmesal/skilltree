@@ -1,0 +1,11 @@
+<!-- Dots and lines for this project group -->
+<svg id="svg-{{idx}}"></svg>
+
+<div class="project" ng-repeat="project in projects">
+  <p class="title">{{project.title}}</p>
+  <p class="description">{{project.description}}</p>
+  <div class="links">
+    <a class="link code" ng-href="project.links.code">view code</a>
+    <a class="link site" ng-href="project.links.site">{{project.links.site}}</a>
+  </div>
+</div>

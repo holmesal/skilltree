@@ -9,6 +9,11 @@
 ###
 angular.module('skilltreeApp')
   .controller 'ProfileCtrl', ($scope) ->
+
+    $scope.person = 
+      photo: 'https://avatars3.githubusercontent.com/u/1147390?v=2&s=460'
+      name: 'Alonso Holmes'
+
     $scope.skills = [
         name: 'AngularJS'
         projects: [
@@ -31,5 +36,17 @@ angular.module('skilltreeApp')
             description: 'Shortwave\'s message parser'
             links:
               code: 'http://google.com'
+          ,
+            title: 'skilltree'
+            description: 'Skill sheets for developers'
+            links:
+              code: 'http://google.com'
+              site: 'skilltree.io'
+          ,
+            title: 'skilltree'
+            description: 'Skill sheets for developers'
+            links:
+              code: 'http://google.com'
+              site: 'skilltree.io'
         ]
     ]
