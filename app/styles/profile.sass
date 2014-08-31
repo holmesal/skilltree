@@ -10,6 +10,7 @@ $photoSize: 84px
   padding-top: 80px
 
   .person 
+    position: relative
 
     .photo
       margin-left: auto 
@@ -20,18 +21,36 @@ $photoSize: 84px
       background-size: cover
       border-radius: 50%
 
+    .name 
+      font-family: Avenir-Roman
+      font-size: 21px
+      color: $nameColor
+      -webkit-font-smoothing: antialiased
+      +transition(0.8s ease-in-out all)
+      position: absolute
+      top: 50%
+      margin-top: -14px
+      left: 50%
+      margin-left: $photoSize
+
+
   skills
     display: block
     overflow: auto
+    position: relative
 
     .skills
-      margin-top: 110px
+      // margin-top: 110px
       position: relative
+
+      &:last-child
+        margin-bottom: 190px
 
       .skill
         width: 100%
         overflow: auto
         margin-bottom: 35px
+
 
         .name,projects
           width: 50%
@@ -40,19 +59,34 @@ $photoSize: 84px
 
         .name
           text-align: right
-          padding-right: $linePadding
           font-family: Avenir-Roman
           font-size: 21px
           color: $nameColor
           -webkit-font-smoothing: antialiased
+          +transition(0.8s ease-in-out all)
+          opacity: 0
+
+          &.visible
+            padding-right: $linePadding
+            opacity: 1
 
         projects
           text-align: left
           padding-left: $linePadding
           position: relative
 
+
           .project
             margin-bottom: 14px
+            opacity: 0
+            +transition(0.8s ease-in-out all)
+            margin-left: -10px
+            // +transition-delay(0.3s)
+
+            &.visible
+              opacity: 1
+              margin-left: 0px
+
 
             .title
               font-size: 18px
@@ -83,6 +117,25 @@ $photoSize: 84px
             bottom: 0
             height: 100%
             // background-color: gray
+
+  .feet 
+    width: 100%
+    text-align: center
+    margin-bottom: 108px
+    display: block
+
+    &:hover
+      cursor: pointer
+      text-decoration: none
+
+    .plug
+      font-family: Avenir-Book
+      font-size: 17px
+      color: #838383
+      letter-spacing: 0.8px
+      -webkit-font-smoothing: antialiased
+      line-height: 23px
+      margin-top: 10px
 
 
   #lineSvg  

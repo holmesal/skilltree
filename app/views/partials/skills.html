@@ -1,9 +1,18 @@
 <svg id="lineSvg"></svg>
-<div class="skills">
+<div class="skills" ng-style="{marginTop: mtop}">
   <div class="skill" ng-repeat="skill in skills">
-    <div class="name">
+    <div class="name" ng-class="{visible:visible[$index]}">
       {{skill.name}}
     </div>
-    <projects projects="skill.projects" idx="$index" ng-init="init()"></projects>
+    <projects 
+      projects="skill.projects" 
+      idx="$index" 
+      visible="visible[$index]"
+      padding="padding"
+      velocity="velocity"
+      ng-class="{visible:visible[$index]}">
+    </projects>
   </div>
+
+  
 </div>

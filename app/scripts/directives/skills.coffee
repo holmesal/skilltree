@@ -13,12 +13,20 @@ angular.module('skilltreeApp')
     # replace: true
     link: (scope, element, attrs) ->
       # element.text 'this is the skills directive'
-      v = 20
 
-      scope.init = ->
+      scope.visible = []
+
+      scope.mtop = 110
+      scope.padding = 13
+      scope.velocity = 220
+
+      console.info 'new skills directive'
+
+      scope.setup = ->
+        # console.info 'new line!'
         new Line
 
-      $timeout scope.init, 0
+      $timeout scope.setup, 1000
 
 
       class Line 
@@ -26,6 +34,7 @@ angular.module('skilltreeApp')
         constructor: ->
 
           @positions = []
+          scope.visible = []
 
           @elem = angular.element element[0].children[0]
 
@@ -39,17 +48,32 @@ angular.module('skilltreeApp')
 
           @getPositions()
 
+          # Set up the show timers
+          for pos,idx in @positions 
+            delay = (pos+scope.mtop+scope.padding) * 1000 / scope.velocity
+            @showSkill idx, delay
+
+
         drawFaded: ->
           @faded = @s.line @dims.w/2, 0, @dims.w/2, 0
 
           @faded.attr
             stroke: '#4A4A4A'
-            opacity: 0.17
+            opacity: 0.5#0.17
             strokeWidth: 0.5
 
           @faded.animate
             y2: @dims.h 
-          , @dims.h * 1000 / v
+          , @dims.h * 1000 / scope.velocity
+
+        showSkill: (idx, delay=0) ->
+          $timeout =>
+            console.log scope.visible
+            console.log idx
+            scope.visible[idx] = true
+            console.log scope.visible
+          , delay
+
 
         getPositions: ->
           @parentOffset = element[0].offsetTop
@@ -57,7 +81,9 @@ angular.module('skilltreeApp')
 
 
           # Skip the first element - it's an SVG
-          @positions = (elem.offsetTop for elem,idx in element[0].children[1].children)
+          elems = element[0].children[1].children
+          @positions = (elem.offsetTop for elem,idx in elems)
+          scope.visible = (false for pos in @positions)
 
           console.log @positions
 
