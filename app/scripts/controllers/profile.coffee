@@ -29,24 +29,24 @@ angular.module('skilltreeApp')
               code: 'http://google.com'
               site: 'skilltree.io'
         ]
-      , 
-        name: 'NodeJS'
-        projects: [
-            title: 'shortbot'
-            description: 'Shortwave\'s message parser'
-            links:
-              code: 'http://google.com'
-          ,
-            title: 'skilltree'
-            description: 'Skill sheets for developers'
-            links:
-              code: 'http://google.com'
-              site: 'skilltree.io'
-          ,
-            title: 'skilltree'
-            description: 'Skill sheets for developers'
-            links:
-              code: 'http://google.com'
-              site: 'skilltree.io'
-        ]
+      # , 
+      #   name: 'NodeJS'
+      #   projects: [
+      #       title: 'shortbot'
+      #       description: 'Shortwave\'s message parser'
+      #       links:
+      #         code: 'http://google.com'
+      #     ,
+      #       title: 'skilltree'
+      #       description: 'Skill sheets for developers'
+      #       links:
+      #         code: 'http://google.com'
+      #         site: 'skilltree.io'
+      #     ,
+      #       title: 'skilltree'
+      #       description: 'Skill sheets for developers'
+      #       links:
+      #         code: 'http://google.com'
+      #         site: 'skilltree.io'
+      #   ]
     ]

@@ -1,0 +1,9 @@
+<svg id="lineSvg"></svg>
+<div class="skills">
+  <div class="skill" ng-repeat="skill in skills">
+    <div class="name">
+      {{skill.name}}
+    </div>
+    <projects projects="skill.projects" idx="$index" ng-init="init()"></projects>
+  </div>
+</div>

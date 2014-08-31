@@ -15,6 +15,14 @@ angular.module('skilltreeApp')
       idx: '='
     link: (scope, element, attrs) ->
 
+      padding = 13
+
+      v= 20
+
+      mtop = 110
+
+      dtop = (110 + padding) / v
+
 
       scope.init = ->
         new Line
@@ -26,8 +34,6 @@ angular.module('skilltreeApp')
       class Line 
 
         constructor: ->
-
-          @padding = 13
 
           @positions = []
           @dots = []
@@ -47,7 +53,9 @@ angular.module('skilltreeApp')
           # If there's more than one project
 
           # Draw it!
-          @draw()
+          $timeout => 
+            @draw()
+          , dtop * 1000
 
         getPositions: ->
           @parentOffset = element[0].offsetTop
@@ -63,19 +71,21 @@ angular.module('skilltreeApp')
         draw: ->
 
           # Draw the first dot
-          @showDot 0
+          # @showDot 0
 
           # If there are more, show them while drawing the line
           if @positions.length > 1
             # Draw the line
             @showLine()
             # Show the dots
-            for idx in [1..@positions.length-1]
-              @showDot idx, idx*100
+            for pos,idx in @positions
+              # How long will it take the line to get here?
+              delay = pos * 1000 / v
+              @showDot idx, delay
 
 
         showLine: ->
-          @dark = @s.line @dims.w/2, @padding, @dims.w/2, 0
+          @dark = @s.line @dims.w/2, padding, @dims.w/2, padding
 
           @dark.attr
             stroke: '#4A4A4A'
@@ -83,13 +93,13 @@ angular.module('skilltreeApp')
             strokeWidth: 0.5
 
           @dark.animate
-            y2: @lastDot + @padding
-          , 300, mina.easeInOut
+            y2: @lastDot + padding
+          , @lastDot * 1000 / v
 
         showDot: (idx, delay=0) ->
           # Draw
           $timeout =>
-            d = @dots[idx] = @s.circle @dims.w/2, @positions[idx] + @padding, 0
+            d = @dots[idx] = @s.circle @dims.w/2, @positions[idx] + padding, 0
             # Orange
             d.attr 
               fill: '#E47D42'
@@ -97,7 +107,7 @@ angular.module('skilltreeApp')
             # Bounce
             d.animate
               r: 3.5
-            , 300, mina.elastic
+            , 500, mina.elastic
           , delay
 
 

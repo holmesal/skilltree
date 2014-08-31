@@ -17,6 +17,8 @@ angular.module('skilltreeApp')
 
       # console.log element.width()
 
+      v = 20
+
 
       class Line 
 
@@ -42,7 +44,7 @@ angular.module('skilltreeApp')
 
           @faded.animate
             y2: @dims.h 
-          , 1000
+          , @dims.h * 1000 / v
 
       new Line
   )

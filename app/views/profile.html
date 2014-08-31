@@ -1,19 +1,11 @@
 <div class="profile">
 
-<line></line>
+<!-- <line></line> -->
 
 <div class="person">
   <div class="photo" ng-style="{'background-image': 'url('+person.photo+')'}"></div>
 </div>
 
-<div class="skills">
+<skills skills="skills"></skills>
 
-  <div class="skill" ng-repeat="skill in skills">
-    <div class="name">
-      {{skill.name}}
-    </div>
-    <projects projects="skill.projects" idx="$index" ng-init="init()"></projects>
-  </div>
-
-</div>
 </div>

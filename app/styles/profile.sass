@@ -20,64 +20,69 @@ $photoSize: 84px
       background-size: cover
       border-radius: 50%
 
-  .skills
-    margin-top: 110px
+  skills
+    display: block
+    overflow: auto
 
-    .skill
-      width: 100%
-      overflow: auto
-      margin-bottom: 35px
+    .skills
+      margin-top: 110px
+      position: relative
 
-      .name,projects
-        width: 50%
-        +box-sizing(border-box)
-        float: left
+      .skill
+        width: 100%
+        overflow: auto
+        margin-bottom: 35px
 
-      .name
-        text-align: right
-        padding-right: $linePadding
-        font-family: Avenir-Roman
-        font-size: 21px
-        color: $nameColor
-        -webkit-font-smoothing: antialiased
+        .name,projects
+          width: 50%
+          +box-sizing(border-box)
+          float: left
 
-      projects
-        text-align: left
-        padding-left: $linePadding
-        position: relative
+        .name
+          text-align: right
+          padding-right: $linePadding
+          font-family: Avenir-Roman
+          font-size: 21px
+          color: $nameColor
+          -webkit-font-smoothing: antialiased
 
-        .project
-          margin-bottom: 14px
+        projects
+          text-align: left
+          padding-left: $linePadding
+          position: relative
 
-          .title
-            font-size: 18px
-            line-height: 25px
-            margin-top: 1px
+          .project
+            margin-bottom: 14px
 
-          .description
-            font-size: 14px
-            line-height: 19px
+            .title
+              font-size: 18px
+              line-height: 25px
+              margin-top: 1px
 
-          .links
-            margin-top: 3px
-
-            .link
+            .description
               font-size: 14px
               line-height: 19px
-              line-height: 16px
 
-              &.code
-                margin-right: 19px
+            .links
+              margin-top: 3px
 
-        svg 
-          width: $linePadding * 2
-          position: absolute
-          left: 0
-          margin-left: -$linePadding
-          top: 0
-          bottom: 0
-          height: 100%
-          // background-color: gray
+              .link
+                font-size: 14px
+                line-height: 19px
+                line-height: 16px
+
+                &.code
+                  margin-right: 19px
+
+          svg 
+            width: $linePadding * 2
+            position: absolute
+            left: 0
+            margin-left: -$linePadding
+            top: 0
+            bottom: 0
+            height: 100%
+            // background-color: gray
 
 
   #lineSvg  
@@ -87,4 +92,3 @@ $photoSize: 84px
     left: 50%
     margin-left: -$linePadding
     z-index: 0
-    padding-top: $photoSize
