@@ -18,7 +18,7 @@ angular.module('skilltreeApp')
 
       scope.mtop = 110
       scope.padding = 13
-      scope.velocity = 220
+      scope.velocity = 420
 
       console.info 'new skills directive'
 

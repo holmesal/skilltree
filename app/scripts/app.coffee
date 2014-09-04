@@ -31,3 +31,7 @@ angular
       .otherwise
         redirectTo: '/'
 
+  .run ($location) ->
+
+    $location.path '/profile'
+

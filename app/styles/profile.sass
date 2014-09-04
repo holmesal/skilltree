@@ -1,8 +1,11 @@
 @import compass/css3
+@import compass/css3/user-interface
 
 $linePadding: 21px
 $nameColor: #6D6D6D
 $projectColor: #4A4A4A
+$fadedColor: #979797
+$veryFadedColor: #C6C5C5
 $photoSize: 84px
 
 .profile
@@ -27,6 +30,7 @@ $photoSize: 84px
       color: $nameColor
       -webkit-font-smoothing: antialiased
       +transition(0.8s ease-in-out all)
+      // +transition-delay(1s)
       position: absolute
       top: 50%
       margin-top: -14px
@@ -64,7 +68,9 @@ $photoSize: 84px
           color: $nameColor
           -webkit-font-smoothing: antialiased
           +transition(0.8s ease-in-out all)
+          +transition-delay(1s)
           opacity: 0
+          padding-right: $linePadding - 4
 
           &.visible
             padding-right: $linePadding
@@ -74,18 +80,19 @@ $photoSize: 84px
           text-align: left
           padding-left: $linePadding
           position: relative
+          padding-bottom: 50px
 
 
           .project
             margin-bottom: 14px
             opacity: 0
-            +transition(0.8s ease-in-out all)
-            margin-left: -10px
+            +transition(opacity 0.8s 1s, 0.2s min-height)
+            // margin-left: -10px
             // +transition-delay(0.3s)
 
             &.visible
               opacity: 1
-              margin-left: 0px
+              // margin-left: 0px
 
 
             .title
@@ -108,6 +115,29 @@ $photoSize: 84px
                 &.code
                   margin-right: 19px
 
+          .addProject
+            min-height: 30px
+
+            &.showAdd
+              min-height: 100px
+
+            &:hover
+              cursor: pointer
+
+            .addText
+              color: $fadedColor
+              line-height: 26px
+              // padding-top: 1px
+
+            input 
+              line-height: 25px
+              font-size: 18px
+              background: none
+              border: none
+              line-height: 26px
+              // +input-placeholder
+              //   font-size: 21px
+
           svg 
             width: $linePadding * 2
             position: absolute
@@ -116,7 +146,9 @@ $photoSize: 84px
             top: 0
             bottom: 0
             height: 100%
-            // background-color: gray
+            
+            .plus:hover
+              cursor: pointer
 
   .feet 
     width: 100%

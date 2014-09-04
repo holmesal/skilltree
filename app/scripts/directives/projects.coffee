@@ -7,7 +7,7 @@
  # # projects
 ###
 angular.module('skilltreeApp')
-  .directive('projects', ($timeout) ->
+  .directive('projects', ($timeout, $rootScope, Auth) ->
     templateUrl: 'views/partials/projects.html'
     restrict: 'E'
     scope: 
@@ -20,6 +20,9 @@ angular.module('skilltreeApp')
 
       scope.projectVisible = []
 
+      # Show the 'add project' dialog
+      scope.showAdd = false
+
       scope.init = ->
         scope.line = new Line
 
@@ -27,8 +30,17 @@ angular.module('skilltreeApp')
         console.log "visible changed to #{scope.visible}"
         if visible is true
           scope.line.draw()
-        
 
+      scope.$watch 'showAdd', (showAdd) =>
+        if showAdd isnt undefined
+          # Rotate the plus
+          scope.line.rotatePlus()
+          # Set focus if necessary
+          if showAdd
+            scope.$broadcast 'focusOn', 'repoName'
+
+
+      # Need to hop on the next $digest for some reason
       $timeout scope.init, 0
 
 
@@ -98,6 +110,7 @@ angular.module('skilltreeApp')
         showProject: (idx, delay=0) ->
           # Wait
           $timeout =>
+
             # Draw the dot
             d = @dots[idx] = @s.circle @dims.w/2, @positions[idx] + scope.padding, 0
             # Orange
@@ -109,9 +122,45 @@ angular.module('skilltreeApp')
               r: 3.5
             , 500, mina.elastic
 
+            # If the owner is logged in and this is the last item, it's an add directive, so draw the plus instead
+            if idx is @positions.length - 1 and Auth.owner
+              @showPlus @positions[idx]
+
             # Set as visible
             scope.projectVisible[idx] = true
+
           , delay
+
+
+        showPlus: (pos) ->
+            # Draw the plus
+            Snap.load 'images/plus.svg', (f) =>
+              # Add to dom
+              @plus = f.select 'g'
+              @plus.attr
+                class: 'plus'
+              @s.append @plus
+              # Offset by a bit
+              @plusBox = @plus.getBBox()
+              offset = (@dims.w/2)-(@plusBox.width/2) - 1 # jank pixel
+              # Move
+              @plusTransform = "t#{offset},#{pos}"
+              @plus.transform @plusTransform
+              # Handle clicks
+              @plus.click =>
+                scope.$apply =>
+                  scope.showAdd = !scope.showAdd
+
+        rotatePlus: ->
+          rotation = if scope.showAdd then 45 else 0
+          @plus.animate
+            transform: "#{@plusTransform} r#{rotation},#{(@plusBox.width/2)},#{@plusBox.height/2}"
+          , 200
+
+
+
+
+
 
 
 

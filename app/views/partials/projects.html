@@ -9,3 +9,12 @@
     <a class="link site" ng-href="project.links.site">{{project.links.site}}</a>
   </div>
 </div>
+
+<!-- Treating this like a fake project - not the most elegant way to handle this, but it's quick -->
+<div class="project addProject" 
+  ng-class="{visible:projectVisible[projects.length],showAdd:showAdd}">
+  <p class="addText" 
+    ng-show="!showAdd"
+    ng-click="showAdd = true">add project</p>
+  <input ng-show="showAdd" type="text" placeholder="Github repo" focus-on="repoName">
+</div>
