@@ -11,10 +11,11 @@ angular.module('skilltreeApp')
     templateUrl: 'views/partials/skills.html'
     restrict: 'E'
     # replace: true
+    # scope: true
     link: (scope, element, attrs) ->
       # element.text 'this is the skills directive'
 
-      scope.visible = []
+      scope.shown = []
 
       scope.mtop = 110
       scope.padding = 13
@@ -34,7 +35,7 @@ angular.module('skilltreeApp')
         constructor: ->
 
           @positions = []
-          scope.visible = []
+          scope.shown = []
 
           @elem = angular.element element[0].children[0]
 
@@ -67,11 +68,13 @@ angular.module('skilltreeApp')
           , @dims.h * 1000 / scope.velocity
 
         showSkill: (idx, delay=0) ->
-          $timeout =>
-            console.log scope.visible
+          $timeout ->
+            console.info 'showing skill!'
+            console.log scope.shown
             console.log idx
-            scope.visible[idx] = true
-            console.log scope.visible
+            scope.shown[idx] = true
+            console.log scope.shown
+            scope.$apply ->
           , delay
 
 
@@ -83,9 +86,11 @@ angular.module('skilltreeApp')
           # Skip the first element - it's an SVG
           elems = element[0].children[1].children
           @positions = (elem.offsetTop for elem,idx in elems)
-          scope.visible = (false for pos in @positions)
+          scope.shown = (false for pos in @positions)
 
           console.log @positions
+          console.log 'shown: '
+          console.log scope.shown
 
           # Get last dot position
           @lastDot = @positions[@positions.length-1]

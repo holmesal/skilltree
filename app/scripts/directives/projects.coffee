@@ -13,7 +13,7 @@ angular.module('skilltreeApp')
     scope: 
       projects: '='
       idx: '='
-      visible: '='
+      shown: '='
       padding: '='
       velocity: '='
     link: (scope, element, attrs) ->
@@ -26,10 +26,11 @@ angular.module('skilltreeApp')
       scope.init = ->
         scope.line = new Line
 
-      scope.$watch 'visible', (visible) ->
-        console.log "visible changed to #{scope.visible}"
-        if visible is true
+      scope.$watch 'shown', (shown) ->
+        console.log "shown changed to #{scope.shown}"
+        if shown is true
           scope.line.draw()
+      , true
 
       scope.$watch 'showAdd', (showAdd) =>
         if showAdd isnt undefined and scope.line
@@ -41,7 +42,7 @@ angular.module('skilltreeApp')
 
 
       # Need to hop on the next $digest for some reason
-      $timeout scope.init, 0
+      $timeout scope.init, 100
 
 
       class Line 
