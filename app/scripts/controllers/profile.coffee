@@ -26,13 +26,13 @@ angular.module('skilltreeApp')
             title: 'skilltree'
             description: 'Skill sheets for developers'
             links:
-              code: 'https://github.com/holmesal/skilltree'
+              code: 'github.com/holmesal/skilltree'
               site: 'skilltree.mtnlab.io'
           ,
             title: 'such fame'
             description: 'a famo.us/angular portfolio'
             links:
-              code: 'https://github.com/holmesal/such-fame'
+              code: 'github.com/holmesal/such-fame'
               site: 'famous.mtnlab.io'
         ]
       , 
@@ -52,7 +52,7 @@ angular.module('skilltreeApp')
             title: 'bifrost'
             description: 'Turn your Raspberry Pi into a Bluetooth Low Energy relay'
             links:
-              code: 'https://github.com/robinpowered/bifrost'
+              code: 'github.com/robinpowered/bifrost'
               site: 'https://robinpowered.com/developers'
         ]
       ,
