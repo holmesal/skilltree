@@ -49,11 +49,11 @@ angular.module('skilltreeApp')
               # code: 'github.com/holmesal/salute-backend'
               site: 'salute.io'
           ,
-            title: 'skilltree'
-            description: 'Skill sheets for developers'
+            title: 'bifrost'
+            description: 'Turn your Raspberry Pi into a Bluetooth Low Energy relay'
             links:
-              # code: 'http://google.com'
-              site: 'skilltree.io'
+              code: 'https://github.com/robinpowered/bifrost'
+              site: 'https://robinpowered.com/developers'
         ]
       ,
         name: 'Objective-C'
