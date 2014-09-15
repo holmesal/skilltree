@@ -5,8 +5,8 @@
   <p class="title">{{project.title}}</p>
   <p class="description">{{project.description}}</p>
   <div class="links">
-    <a class="link code" ng-href="project.links.code">view code</a>
-    <a class="link site" ng-href="project.links.site">{{project.links.site}}</a>
+    <a class="link code" ng-href="http://{{project.links.code}}" target="_blank" ng-if="project.links.code">view code</a>
+    <a class="link site" ng-href="http://{{project.links.site}}" target="_blank" ng-if="project.links.site">{{project.links.site}}</a>
   </div>
 </div>
 

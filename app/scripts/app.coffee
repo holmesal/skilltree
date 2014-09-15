@@ -20,18 +20,13 @@ angular
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
+        templateUrl: 'views/profile.html'
+        controller: 'ProfileCtrl'
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
-      .when '/profile',
-        templateUrl: 'views/profile.html'
-        controller: 'ProfileCtrl'
       .otherwise
         redirectTo: '/'
 
   .run ($location) ->
-
-    $location.path '/profile'
 
