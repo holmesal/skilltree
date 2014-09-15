@@ -32,7 +32,7 @@ angular.module('skilltreeApp')
           scope.line.draw()
 
       scope.$watch 'showAdd', (showAdd) =>
-        if showAdd isnt undefined
+        if showAdd isnt undefined and scope.line
           # Rotate the plus
           scope.line.rotatePlus()
           # Set focus if necessary
