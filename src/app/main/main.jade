@@ -1,0 +1,32 @@
+//- .bgImage
+  .image 
+  .filter
+
+div(
+  ng-include="'components/navbar/navbar.html'"
+  ng-if="false"
+)
+
+.container
+
+  .personWrapper(
+      ng-style="{height: height/2}"
+    )
+    .person
+      .photo(
+        ng-style="{backgroundImage: 'url('+person.photo+')'}"
+      )
+      p.name {{person.name}}
+
+  skill(
+    ng-repeat="skill in skills"
+    skill="skill"
+  )
+
+  .madeWith made with 
+    a(
+      href="http://skilltree.io"
+      target="_blank"
+    ) skilltree.io
+
+//- minimap

@@ -1,0 +1,59 @@
+.bgImage 
+  position: fixed 
+  z-index: -1
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  // background-image: radial-gradient(80% 10%, circle, #BF7667, transparent), radial-gradient(80% 50%, circle, #EFDDB7, transparent), radial-gradient(20% 80%, 40em 40em, #977351, transparent), radial-gradient(10% 10%, circle, #E1C3B9, transparent)
+
+  
+
+  background-image: radial-gradient(0% 0%, circle, #FFE9A5, transparent), radial-gradient(100% 100%, circle, #634A73, transparent), radial-gradient(100% 0%, circle, #B26185, transparent), radial-gradient(0% 100%, circle, #D78F75, transparent)
+  // .image,.filter
+  // .image
+  //   // background-image: radial-gradient(50% 133%, #738B97 34%, #5E747F 100%);
+  // background-image: url('../assets/images/mountain.png')
+  // filter: blur(20px)
+  // background-size: cover
+  //   background-repeat: no-repeat
+  //   background-position: center center
+  //   // background-attachment: fixed
+  // .filter
+  //   background-image: $filter;
+  //   opacity: 0.9
+
+.personWrapper
+  // background-color: red
+  .person
+    text-align: center
+    color: white
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    .photo
+      $size: 70px
+      width: $size 
+      height: $size 
+      border-radius: 50% //2px 
+      // background-color: $blue
+      background-size: cover
+      background-position: center center
+      margin-left: auto 
+      margin-right: auto
+      // border: 2px solid rgba(255,255,255,0.3)
+      margin-bottom: 17px
+    .name 
+      @extend .family-book
+      font-size: em(20px)
+      border-bottom: 1px solid rgba(255,255,255,0.8)
+      display: inline-block
+
+
+.madeWith
+  margin-top: 200px
+  margin-bottom: 100px
+  text-align: center
+  color: white 
+  @extend .family-light
+  font-size: em(16px)

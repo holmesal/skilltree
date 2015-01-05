@@ -1,0 +1,14 @@
+p.name {{skill.name}}
+p.count {{count | uppercase}}
+
+div(
+  ng-repeat="project in skill.projects"
+)
+  .separator
+    .line
+  project(project="project")
+
+//- project(
+//-   ng-repeat="project in skill.projects"
+//-   project="project"
+//- )

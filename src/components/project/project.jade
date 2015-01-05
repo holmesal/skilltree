@@ -1,0 +1,26 @@
+.top.row
+  .col-xs-12.col-sm-8
+    .info
+      p.name {{project.name}}
+      p.description {{project.description}}
+  .col-xs-12.col-sm-4
+    a.button.hidden-xs source
+    a.button.visible-xs view source
+
+.dash(ng-if="project.highlights")
+
+.bottom(
+  ng-if="project.highlights"
+)
+  .row.highlight(
+    ng-repeat="highlight in project.highlights"
+  )
+    .hidden-xs.col-sm-1
+      a.button(
+        href="http://github.com/holmesal/{{project.name}}/blob/develop/{{highlight.file}}"
+        target="_blank"
+      ) vvv
+    .col-xs-12.col-sm-11
+      .info
+        p.file {{highlight.file}}
+        p.description {{highlight.description}}
