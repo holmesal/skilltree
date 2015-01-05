@@ -10,3 +10,13 @@ angular.module 'skilltree'
 
     scope.open = (url) ->
       $window.open url, '_blank'
+
+    scope.$watch 'project.highlights', (highlights) ->
+      for highlight in highlights
+        lastSegment = highlight.link.split('/').pop()
+        if lastSegment.split('.').length > 1
+          # return src.coffee
+          highlight.type = 'file'
+        else
+          # return services/
+          highlight.type = 'folder'

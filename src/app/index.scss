@@ -31,9 +31,9 @@ $filter: linear-gradient(-45deg, #D89075 0%, #B26185 100%), linear-gradient(-135
 }
 
 html {
-  background-image: radial-gradient(50% -10%, circle, #738B97, transparent), radial-gradient(50% 100%, circle, #5E747F, transparent)
-  min-width: 100%
-  min-height: 100%
+  background-image: radial-gradient(50% -10%, circle, #738B97, transparent), radial-gradient(50% 100%, circle, #5E747F, transparent);
+  min-width: 100%;
+  min-height: 100%;
   // background-image: url('/assets/images/bg.jpg');
   // background-position: center center;
   // background-attachment: fixed;
@@ -71,9 +71,9 @@ a {
 }
 
 // injector
-@import 'main/main.sass';
-@import '../components/skill/skill.sass';
-@import '../components/navbar/navbar.sass';
 @import '../components/minimap/minimap.sass';
+@import '../components/navbar/navbar.sass';
 @import '../components/project/project.sass';
+@import '../components/skill/skill.sass';
+@import 'main/main.sass';
 // endinjector

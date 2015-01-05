@@ -5,14 +5,16 @@
       p.description {{project.description}}
   .col-xs-12.col-sm-4
     a.button.hidden-xs(
-      href="{{highlight.source}}"
+      href="{{project.source}}"
       target="_blank"
-    ) source
+    ) 
+      i.fa.fa-github-alt.withText
+      span source
     a.button.visible-xs(
-      href="{{highlight.source}}"
+      href="{{project.source}}"
       target="_blank"
     )
-      img.code(src="assets/images/codeBlue.png")
+      i.fa.fa-github-alt.withText
       span view source
 
 .dash(ng-if="project.highlights")
@@ -30,11 +32,19 @@
         target="_blank"
       )
         //- img(src="assets/images/codeBlue.png")
-        .glyphicon.glyphicon-link
+        //- i.fa.fa-file-code-o
+        i.fa(
+          ng-class="{'fa-folder-open-o': highlight.type == 'folder', 'fa-file-code-o': highlight.type == 'file', 'fa-external-link': !highlight.type}"
+        )
         //- object(type="image/svg+xml" data="assets/images/code.svg")
     .col-xs-12.col-sm-11
       .info
-        p.file {{highlight.link | highlight}}
+        p.file
+          span.visible-xs-inline
+            i.fa(
+              ng-class="{'fa-folder-open-o': highlight.type == 'folder', 'fa-file-code-o': highlight.type == 'file', 'fa-external-link': !highlight.type}"
+            )
+          {{highlight.link | highlight}}
         p.description {{highlight.description}}
   .row
     .col-xs-12

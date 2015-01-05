@@ -8,3 +8,6 @@ angular.module "skilltree", ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 
 
     $urlRouterProvider.otherwise '/'
 
+  .run () ->
+    FastClick.attach document.body
+
