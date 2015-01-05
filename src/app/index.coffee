@@ -2,7 +2,7 @@ angular.module "skilltree", ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
       .state "home",
-        url: "/",
+        url: "/?minimap",
         templateUrl: "app/main/main.html",
         controller: "MainCtrl"
 

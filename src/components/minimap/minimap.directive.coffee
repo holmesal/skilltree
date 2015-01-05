@@ -1,5 +1,5 @@
 angular.module 'skilltree'
-  .directive 'minimap', () ->
+  .directive 'minimap', ($interval, $window) ->
     restrict: 'E'
     templateUrl: 'components/minimap/minimap.html'
     scope:
@@ -16,8 +16,40 @@ angular.module 'skilltree'
 
       for num in [1...20]
         rand = Math.round Math.random()*10
+        skills = ['AngularJS', 'Firebase', 'NodeJS', 'Python', 'MongoDB', 'Express', 'PHP', 'Objective-C', 'Swift', 'Squirrel']
         scope.fakeSkills.push
-          name: "FakeJS#{rand}"
-          skills: [1..rand]
+          name: if num > 1 then skills[rand] else 'AngularJS'
+          projects: [1..rand]
 
-      console.log scope.fakeSkills
+      interval = 2000
+
+      lastPos = 0
+
+      scope.offset = 0
+
+      # $interval ->
+
+
+      angular.element $window
+        .bind 'scroll', (ev) ->
+          newPos = -$window.scrollY
+          scope.offset = newPos/10
+          console.log "scroll to #{newPos}"
+          scope.$apply ->
+          # angular.element(elem[0].children[0]).snabbt
+          #   position: [0,newPos,0]
+          #   from_position: [0,lastPos,0]
+          #   duration: 20
+          #   easing: 'ease'
+          # lastPos = newPos
+        # , interval
+          # console.log 'omg did scroll'
+          # console.log $window.scrollY
+
+      # scope.$watch ->
+      #   console.log 'checking'
+      #   $window.screenTop
+      # , (newY) ->
+      #   console.log "scrolled to #{newY}"
+      # , true
+

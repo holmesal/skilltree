@@ -1,4 +1,11 @@
-
-div(
-  ng-repeat="skill in fakeSkills"
-) {{skill}}
+.mover(
+  ng-style="{transform: 'translateY('+offset+'px)'}"
+)
+  .section(
+    ng-repeat="skill in fakeSkills"
+  )
+    .name {{skill.name}}
+    .line(
+      ng-repeat="project in skill.projects"
+    )
+.arrow

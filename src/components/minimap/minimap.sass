@@ -2,3 +2,36 @@ minimap
   position: fixed
   top: 50%
   left: 0
+  // background-color: red
+  padding-left: 32px
+  text-align: right
+
+  .mover
+
+    .section
+      clear: both
+      margin-bottom: 10px
+      overflow: auto
+
+      .name 
+        @extend .family-light
+        color: white
+
+      .line
+        width: 30px
+        height: 1px
+        background-color: white
+        opacity: 0.37
+        float: right
+        clear: both
+        margin-top: 5px
+
+  .arrow
+    position: absolute
+    top: 4px
+    right: -30px
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    background-color: white
+    display: block
