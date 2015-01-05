@@ -4,8 +4,16 @@
       p.name {{project.name}}
       p.description {{project.description}}
   .col-xs-12.col-sm-4
-    a.button.hidden-xs source
-    a.button.visible-xs view source
+    a.button.hidden-xs(
+      href="{{highlight.source}}"
+      target="_blank"
+    ) source
+    a.button.visible-xs(
+      href="{{highlight.source}}"
+      target="_blank"
+    )
+      img.code(src="assets/images/codeBlue.png")
+      span view source
 
 .dash(ng-if="project.highlights")
 
@@ -14,15 +22,23 @@
 )
   .row.highlight(
     ng-repeat="highlight in project.highlights"
+    ng-click="open(highlight.link)"
   )
     .hidden-xs.col-sm-1
       a.button(
-        href="http://github.com/holmesal/{{project.name}}/blob/develop/{{highlight.file}}"
+        href="{{highlight.link}}"
         target="_blank"
       )
-        img(src="assets/images/codeBlue.png")
+        //- img(src="assets/images/codeBlue.png")
+        .glyphicon.glyphicon-link
         //- object(type="image/svg+xml" data="assets/images/code.svg")
     .col-xs-12.col-sm-11
       .info
-        p.file {{highlight.file}}
+        p.file {{highlight.link | highlight}}
         p.description {{highlight.description}}
+  .row
+    .col-xs-12
+      .extras
+        .extra(
+          ng-repeat="extra in project.extras"
+        ) {{extra}}

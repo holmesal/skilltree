@@ -17,12 +17,13 @@ angular.module "skilltree"
         description: 'Realtime, IRC-like chat app'
         source: 'http://github.com/holmesal/shortwave-web'
         highlights: [
-          file: 'user.coffee'
+          link: 'https://github.com/holmesal/hashtag/tree/develop/app/scripts/services'
           description: 'Firebase authentication service - this binds the app state to Firebase\'s event-based login/logout scheme.'
         ,
-          file: 'composebar.coffee'
+          link: 'https://github.com/holmesal/hashtag/blob/develop/app/scripts/services/user.coffee'
           description: 'Custom composebar directive with support for file uploads.'
         ]
+        extras: ['gulp', 'coffeescript', 'sass', 'firebase']
       ]
     ,
       name: 'NodeJS'

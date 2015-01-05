@@ -5,6 +5,7 @@ project
   padding-bottom: 25px
 
   $side: 20px
+  $buttonRadius: 2px
 
   .button
     @extend .family-light
@@ -12,7 +13,7 @@ project
     height: 39px
     padding-top: 8px 
     border-width: 1px 
-    border-radius: 2px
+    border-radius: $buttonRadius
     border-color: $blue //#92B5DB
     border-style: solid
     color: $blue
@@ -22,6 +23,11 @@ project
       background-color: $blue
       cursor: pointer
       color: white
+
+    img.code 
+      margin-right: 10px
+      height: em(10px)
+      margin-top: -2px
 
 
   .top
@@ -94,5 +100,27 @@ project
           background-color: $blue
           cursor: pointer
           color: white
+      .col-xs-12
+        .info 
+          padding-left: $side
+
+    .extras 
+      padding-left: $side 
+      padding-right: $side 
+      margin-top: 24px
+
+      .extra 
+        @extend .family-book
+        float: left
+        background-color: rgba(20,20,20,0.06)
+        border-radius: $buttonRadius
+        padding-top: 5px
+        padding-bottom: 5px
+        padding-left: 17px
+        padding-right: 17px
+        font-size: em(14px)
+        color: rgba(20,20,20,0.7)
+        margin-right: 14px
+        margin-top: 6px
 
 
