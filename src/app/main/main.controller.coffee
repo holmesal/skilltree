@@ -13,14 +13,6 @@ angular.module "skilltree"
     $scope.skills = [
       name: 'AngularJS'
       projects: [
-        name: 'Skilltree'
-        description: 'This website.'
-        source: 'http://github.com/holmesal/skilltree'
-        highlights: [
-          link: 'https://github.com/holmesal/skilltree/tree/master/src/components/minimap'
-          description: 'A side-mounted nav (inspired by Sublime Text\'s "minimap") that allows you to quickly jump around a page'
-        ]
-      ,
         name: 'Hashtag'
         description: 'Realtime, IRC-like chat app'
         source: 'http://github.com/holmesal/hashtag'
@@ -52,6 +44,7 @@ angular.module "skilltree"
           link: 'https://github.com/holmesal/switchboard/tree/master/src/components/freespace'
           description: 'Directive to visually represent the number of synths and samples loaded, and the available slots remaining. The basis for fa-meter.'
         ]
+        extras: ['Atom-Shell', 'Gulp']
       ,
         name: 'Firesolver'
         description: 'Directive to make route changes contingent on firebase.'
@@ -59,6 +52,15 @@ angular.module "skilltree"
         highlights: [
           link: 'https://github.com/holmesal/firesolver/blob/master/firesolver.coffee'
           description: '$q promises are used to wait for authentication and/or data from a specific firebase location, and then either abort the route change or complete it. If completed, the authenticated user and/or data is injected into the controller.'
+        ]
+        extras: ['CoffeeScript']
+      ,
+        name: 'Skilltree'
+        description: 'A guided tour of your github account. The website you\'re looking at.'
+        source: 'http://github.com/holmesal/skilltree'
+        highlights: [
+          link: 'https://github.com/holmesal/skilltree/tree/master/src/components/minimap'
+          description: 'A side-mounted nav (inspired by Sublime Text\'s "minimap") that allows you to quickly jump around a page. Toggle it by adding "?minimap=true" to your url.'
         ]
       ]
     ,
@@ -77,7 +79,7 @@ angular.module "skilltree"
         extras: ['AngularJS', 'Gulp', 'Jade', 'SASS', 'CoffeeScript']
       ,
         name: 'Personal Portfolio'
-        description: 'A famo.us-powered portfolio of personal projects'
+        description: 'A famo.us-powered portfolio of personal projects, at alonso.io'
         source: 'https://github.com/holmesal/such-fame'
         highlights: [
           link: 'https://github.com/holmesal/such-fame/blob/master/Gruntfile.js#L345'
@@ -92,7 +94,7 @@ angular.module "skilltree"
           link: 'https://github.com/holmesal/such-fame/blob/master/app/views/main.html'
           description: 'The main template, and a candidate for directive-ization.'
         ]
-        extras: ['AngularJS']
+        extras: ['AngularJS', 'SASS', 'Grunt']
       ,
         name: 'awesome-seed'
         description: 'a seed project for angular + famo.us apps'
@@ -101,6 +103,7 @@ angular.module "skilltree"
           link: 'https://github.com/holmesal/awesome-seed/blob/master/src/app/main/main.controller.coffee#L41'
           description: 'UI-Router calls $enter and $leave controller methods, which use famo.us transitionables to animate state changes.'
         ]
+        extras: ['AngularJS', 'Sheets', 'SASS', 'CoffeeScript', 'Gulp', 'Jade']
       ]
     ,
       name: 'NodeJS'
@@ -112,7 +115,19 @@ angular.module "skilltree"
           link: 'https://github.com/holmesal/fireman/blob/master/server.coffee'
           description: 'Fireman listens to a `pushQueue` at the root of your firebase. Any time an notification object is pushed into the queue, a push notification is sent to the appropriate device.'
         ]
-        extras: []
+        extras: ['Dokku', 'CoffeScript']
+      ,
+        name: 'rbn-pi'
+        description: 'A daemon designed to run on a raspberry pi and stream data from connected USB and Bluetooth devices.'
+        source: 'https://github.com/holmesal/bifrost'
+        highlights: [
+          link: 'https://github.com/holmesal/bifrost/blob/master/config.json'
+          description: 'You can require modules like rbn-ble to listen to bluetooth devices, or rbn-websocket to use websockets as a transport layer.'
+        ,
+          link: 'https://github.com/holmesal/bifrost/blob/master/rbn-pi.coffee'
+          description: 'Entry point. Keeps an eye on the github releases page, and downloads any new updates autonomously. Auto-updating is especially important when you\'re doing things like encasing Raspberry Pis in concrete walls.'
+        ]
+        extras: ['Raspberry Pi']
       ,
         name: 'Marvin the Robot'
         description: 'A depressed, trash-picking-up robot powered by genetic algorithms.'
@@ -121,6 +136,7 @@ angular.module "skilltree"
           link: 'https://github.com/holmesal/marvintherobot/blob/master/src/marvin.litcoffee'
           description: 'The annotated source. Describes the genome, and the fitness function used to evolve it.'
         ]
+        extras: ['Literate CoffeeScript', 'Genetic Algorithms']
       ,
         name: 'Stream backend'
         description: 'Backend for a simple microblogging platform.'
@@ -147,8 +163,8 @@ angular.module "skilltree"
           link: 'https://github.com/holmesal/wanderlust/blob/master/getdata.py#L23'
           description: 'Geohashes are used to project vector data (in latitude/longiture or UTM) onto discrete "blocks" for use in-game.'
         ]
+        extras: ['Google App Engine', 'Open Street Maps']
       ]
-      extras: ['Google App Engine']
     # ,
     #   name: 'Objective-C'
     #   projects: [

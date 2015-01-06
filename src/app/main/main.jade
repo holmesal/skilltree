@@ -21,12 +21,13 @@ div(
   skill(
     ng-repeat="skill in skills"
     skill="skill"
+    ui-sref="skill"
   )
 
-  .madeWith made with 
-    a(
-      href="http://skilltree.io"
-      target="_blank"
-    ) skilltree.io
+  //- .madeWith made with 
+  //-   a(
+  //-     href="http://skilltree.io"
+  //-     target="_blank"
+  //-   ) skilltree.io
 
 minimap(ng-if="showMinimap")
