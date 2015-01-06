@@ -1,10 +1,20 @@
 angular.module "skilltree"
-  .controller "MainCtrl", ($scope, $window, $stateParams) ->
+  .controller "MainCtrl", ($scope, $window, $document, $stateParams) ->
 
     # show or hide the minimap based on a query param
     $scope.showMinimap = $stateParams.minimap
 
+    # console.log $stateParams
+
     $scope.height = $window.innerHeight
+
+    last = Date.now()
+
+    $scope.$watch ->
+      $document.height()
+    , (height) ->
+      console.log "height changed to #{height}, has been #{Date.now() - last}"
+      last = Date.now()
 
     $scope.person =
       name: 'Alonso Holmes'
@@ -191,8 +201,8 @@ angular.module "skilltree"
           lnum = highlight.link.indexOf '#L'
           highlight.text = highlight.link
           unless lnum is -1
-            console.log lnum
+            # console.log lnum
             highlight.text = highlight.link.substring 0, lnum
             highlight.line = highlight.link.substring lnum + 2
-            console.log highlight.line
-            console.log highlight.link
+            # console.log highlight.line
+            # console.log highlight.link

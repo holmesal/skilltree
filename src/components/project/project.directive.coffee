@@ -1,12 +1,19 @@
 angular.module 'skilltree'
-.directive 'project', ($window) ->
-  templateUrl: 'components/project/project.html'
+.directive 'project', ($window, $document, $stateParams, $timeout, urlsafeFilter) ->
+  templateUrl: 'components/project/project.jade'
   restrict: 'E'
   scope:
     project: '='
+    first: '='
   link: (scope, element, attrs) ->
 
-    console.log 'what does this directive actually need to do? handle editing.'
+    $timeout ->
+      if $stateParams.scrollTo is urlsafeFilter scope.project.name
+        if scope.first
+          offset = 200
+        else
+          offset = 20
+        $document.scrollToElement element, offset, 2000
 
     scope.open = (url) ->
       $window.open url, '_blank'

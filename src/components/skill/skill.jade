@@ -6,7 +6,11 @@ div(
 )
   .separator
     .line
-  project(project="project")
+  project(
+    project="project"
+    first="$index == 0"
+    id="{{project.name | urlsafe}}"
+  )
 
 //- project(
 //-   ng-repeat="project in skill.projects"

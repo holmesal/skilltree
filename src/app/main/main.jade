@@ -21,13 +21,14 @@ div(
   skill(
     ng-repeat="skill in skills"
     skill="skill"
-    ui-sref="skill"
+    id="{{skill.name | urlsafe}}"
   )
 
-  //- .madeWith made with 
-  //-   a(
-  //-     href="http://skilltree.io"
-  //-     target="_blank"
-  //-   ) skilltree.io
+  .madeWith made with 
+    a(
+      href="http://skilltree.io"
+      target="_blank"
+      id="madeWith"
+    ) skilltree.io
 
 minimap(ng-if="showMinimap")

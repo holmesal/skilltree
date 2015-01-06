@@ -8,7 +8,8 @@ var browserSync = require('browser-sync');
 
 var qrcode = require('qrcode-terminal');
 
-var middleware = require('./proxy');
+var proxy = require('./proxy');
+var modRewrite = require('connect-modrewrite');
 
 function browserSyncInit(baseDir, files, browser) {
   browser = browser === undefined ? 'default' : browser;
@@ -24,7 +25,11 @@ function browserSyncInit(baseDir, files, browser) {
     startPath: '/',
     server: {
       baseDir: baseDir,
-      middleware: middleware,
+      middleware: [
+        modRewrite([
+          '!\\.\\w+$ /index.html [L]'
+        ])
+      ],
       routes: routes
     },
     browser: browser

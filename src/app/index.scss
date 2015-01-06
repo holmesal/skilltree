@@ -31,16 +31,9 @@ $filter: linear-gradient(-45deg, #D89075 0%, #B26185 100%), linear-gradient(-135
 }
 
 html {
-  background-image: radial-gradient(50% -10%, circle, #738B97, transparent), radial-gradient(50% 110%, circle, #5E747F, transparent);
+  background-image: radial-gradient(circle at 50% -10%, #738B97, transparent), radial-gradient(circle at 50% 110%, #5E747F, transparent);
   min-width: 100%;
   min-height: 100%;
-  // background-image: url('/assets/images/bg.jpg');
-  // background-position: center center;
-  // background-attachment: fixed;
-  // background-size: cover;
-  // background-image: radial-gradient(50% 133%, #738B97 34%, #5E747F 100%);
-  // background-image: $filter
-  // background-image: radial-gradient(80% 10%, circle, #BF7667, transparent), radial-gradient(80% 50%, circle, #EFDDB7, transparent), radial-gradient(20% 80%, 40em 40em, #977351, transparent), radial-gradient(10% 10%, circle, #E1C3B9, transparent)
 }
 
 body {
@@ -72,8 +65,8 @@ a {
 
 // injector
 @import 'main/main.sass';
-@import '../components/skill/skill.sass';
+@import '../components/minimap/minimap.sass';
 @import '../components/navbar/navbar.sass';
 @import '../components/project/project.sass';
-@import '../components/minimap/minimap.sass';
+@import '../components/skill/skill.sass';
 // endinjector

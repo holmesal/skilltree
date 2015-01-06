@@ -4,6 +4,8 @@ var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
 var gulp = require('gulp');
 
+var templateCache = require('gulp-angular-templatecache');
+
 var engines = [
   ['jade',{'pretty':'  '}]
 ];
@@ -11,8 +13,9 @@ var engines = [
 function buildTemplates(engine, src, dest) {
   return gulp.src(src)
     .pipe(consolidate.apply(this, engine))
-    .pipe(rename(function (path) {path.extname = '.html';}))
+    .pipe(templateCache({module: 'skilltree', root: dest.split('.tmp/')[1]}))
     .pipe(gulp.dest(dest));
+    // .pipe(rename(function (path) {path.extname = '.html';}))
 }
 
 function buildTaskFunction(engine) {
@@ -35,3 +38,8 @@ for (var i=0, l=engines.length; i < l; i++) {
 }
 
 gulp.task('consolidate', tasks);
+// gulp.task('consolidate', function(){
+//   return gulp.src(['app/**/*.jade', 'components/**/*.jade'])
+//     .pipe(templateCache({module: 'skilltree'}))
+//     .pipe(gulp.dest())
+// });
