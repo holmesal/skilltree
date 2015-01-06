@@ -62,38 +62,6 @@ angular.module "skilltree"
         ]
       ]
     ,
-      name: 'NodeJS'
-      projects: [
-        name: 'Fireman'
-        description: 'Easy push notifications for Firebase-powered apps.'
-        source: 'https://github.com/holmesal/fireman'
-        highlights: [
-          link: 'https://github.com/holmesal/fireman/blob/master/server.coffee'
-          description: 'Fireman listens to a `pushQueue` at the root of your firebase. Any time an notification object is pushed into the queue, a push notification is sent to the appropriate device.'
-        ]
-        extras: []
-      ,
-        name: 'Marvin the Robot'
-        description: 'A depressed, trash-picking-up robot powered by genetic algorithms.'
-        source: 'https://github.com/holmesal/marvintherobot'
-        highlights: [
-          link: 'https://github.com/holmesal/marvintherobot/blob/master/src/marvin.litcoffee'
-          description: 'The annotated source. Describes the genome, and the fitness function used to evolve it.'
-        ]
-      ,
-        name: 'Stream backend'
-        description: 'Backend for a simple microblogging platform.'
-        source: 'https://github.com/holmesal/stream-backend'
-        highlights: [
-          link: 'https://github.com/holmesal/stream-backend/blob/master/models.coffee'
-          description: 'Simple mongoose models'
-        ,
-          link: 'https://github.com/holmesal/stream-backend/blob/master/server.coffee'
-          description: 'Routes and middleware.'
-        ]
-        extras: ['Express', 'MongoDB', 'Mongoose', 'CoffeeScript']
-      ]
-    ,
       name: 'Famo.us'
       projects: [
         name: 'fa-meter'
@@ -135,6 +103,38 @@ angular.module "skilltree"
         ]
       ]
     ,
+      name: 'NodeJS'
+      projects: [
+        name: 'Fireman'
+        description: 'Easy push notifications for Firebase-powered apps.'
+        source: 'https://github.com/holmesal/fireman'
+        highlights: [
+          link: 'https://github.com/holmesal/fireman/blob/master/server.coffee'
+          description: 'Fireman listens to a `pushQueue` at the root of your firebase. Any time an notification object is pushed into the queue, a push notification is sent to the appropriate device.'
+        ]
+        extras: []
+      ,
+        name: 'Marvin the Robot'
+        description: 'A depressed, trash-picking-up robot powered by genetic algorithms.'
+        source: 'https://github.com/holmesal/marvintherobot'
+        highlights: [
+          link: 'https://github.com/holmesal/marvintherobot/blob/master/src/marvin.litcoffee'
+          description: 'The annotated source. Describes the genome, and the fitness function used to evolve it.'
+        ]
+      ,
+        name: 'Stream backend'
+        description: 'Backend for a simple microblogging platform.'
+        source: 'https://github.com/holmesal/stream-backend'
+        highlights: [
+          link: 'https://github.com/holmesal/stream-backend/blob/master/models.coffee'
+          description: 'Simple mongoose models'
+        ,
+          link: 'https://github.com/holmesal/stream-backend/blob/master/server.coffee'
+          description: 'Routes and middleware.'
+        ]
+        extras: ['Express', 'MongoDB', 'Mongoose', 'CoffeeScript']
+      ]
+    ,
       name: 'Python'
       projects: [
         name: 'Wanderlust'
@@ -167,3 +167,16 @@ angular.module "skilltree"
 
     # for num in [1...9]
     #   $scope.skills[1].projects.push angular.copy $scope.skills[0].projects[0]
+
+    for skill in $scope.skills
+      for project in skill.projects
+        for highlight in project.highlights
+          # catch line numbers
+          lnum = highlight.link.indexOf '#L'
+          highlight.text = highlight.link
+          unless lnum is -1
+            console.log lnum
+            highlight.text = highlight.link.substring 0, lnum
+            highlight.line = highlight.link.substring lnum + 2
+            console.log highlight.line
+            console.log highlight.link

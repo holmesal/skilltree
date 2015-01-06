@@ -44,7 +44,8 @@
             i.fa(
               ng-class="{'fa-folder-open-o': highlight.type == 'folder', 'fa-file-code-o': highlight.type == 'file', 'fa-external-link': !highlight.type}"
             )
-          {{highlight.link | highlight}}
+          {{highlight.text | highlight}}
+          span.lineNumber(ng-if="highlight.line") Line {{highlight.line}}
         p.description {{highlight.description}}
   .row
     .col-xs-12
