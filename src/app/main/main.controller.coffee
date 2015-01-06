@@ -84,7 +84,7 @@ angular.module "skilltree"
           description: 'Lots of transitionables for fine-grained control of every aspect of the animation and presentation.'
         ,
           link: 'https://github.com/holmesal/fa-meter/blob/master/src/fa-meter.coffee#L58'
-          description: 'Famo.us/anuglar $timeline service for controlling multiple animations with a single transitionable.'
+          description: 'Famo.us/angular $timeline service for controlling multiple animations with a single transitionable.'
         ]
         extras: ['AngularJS', 'Gulp', 'Jade', 'SASS', 'CoffeeScript']
       ,
