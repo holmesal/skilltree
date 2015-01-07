@@ -8,14 +8,6 @@ angular.module "skilltree"
 
     $scope.height = $window.innerHeight
 
-    last = Date.now()
-
-    $scope.$watch ->
-      $document.height()
-    , (height) ->
-      console.log "height changed to #{height}, has been #{Date.now() - last}"
-      last = Date.now()
-
     $scope.person =
       name: 'Alonso Holmes'
       photo: 'https://avatars3.githubusercontent.com/u/1147390?v=3&s=460'

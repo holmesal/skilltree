@@ -22,6 +22,8 @@ div(
     ng-repeat="skill in skills"
     skill="skill"
     id="{{skill.name | urlsafe}}"
+    minimap-element="{{skill.name}}"
+    minimap-count="{{skill.projects.length}}"
   )
 
   .madeWith made with 

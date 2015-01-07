@@ -1,5 +1,5 @@
 angular.module 'skilltree'
-  .directive 'minimap', ($interval, $window) ->
+  .directive 'minimap', ($interval, $window, MinimapAPI) ->
     restrict: 'E'
     templateUrl: 'components/minimap/minimap.jade'
     scope:
