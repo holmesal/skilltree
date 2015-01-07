@@ -13,7 +13,7 @@ angular.module 'skilltree'
           offset = 200
         else
           offset = 20
-        $document.scrollToElement element, offset, 2000
+        $document.scrollToElement element, offset, 1000
 
     scope.open = (url) ->
       $window.open url, '_blank'

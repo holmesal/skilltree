@@ -8,7 +8,7 @@ angular.module 'skilltree'
 
     $timeout ->
       if $stateParams.scrollTo is urlsafeFilter scope.skill.name
-        $document.scrollToElement element, 50, 2000
+        $document.scrollToElement element, 50, 1000
 
 
     scope.$watch 'skill.projects', (projects) ->
