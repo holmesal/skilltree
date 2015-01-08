@@ -4,13 +4,10 @@ angular.module 'skilltree'
     templateUrl: 'components/minimap/minimap.jade'
     scope: {}
     link: (scope, elem, attrs) ->
-      console.log MinimapAPI
       scope.elements = MinimapAPI.minimapElements
       scope.focusIndex = MinimapAPI.focusIndex
       scope.focus = MinimapAPI.focus
       scope.offsets = []
-
-      # console.log scope.focusIndex
 
       scope.$watch 'focus', ->
         console.log scope.focus
