@@ -5,22 +5,36 @@ angular.module 'skilltree'
     scope: {}
     link: (scope, elem, attrs) ->
       scope.elements = MinimapAPI.minimapElements
-      scope.focusIndex = MinimapAPI.focusIndex
-      scope.focus = MinimapAPI.focus
+      
       scope.offsets = []
 
-      scope.$watch 'focus', ->
-        console.log scope.focus
-        console.log 'focus test' + scope.focus.index
-      , true
-
-      # $interval ->
-      #   console.log "scope.focusIndex = #{scope.focusIndex}"
-      # , 1000
 
       # wait for the dom to calculate the offsets
       $timeout ->
         for section in elem[0].children
           scope.offsets.push section.offsetTop
 
-        # console.log scope.offsets
+      # elem.snabbt
+
+      $timeout ->
+        scope.focus = MinimapAPI.focus
+        
+      # when elements are populated, animate in the navigation
+      # scope.$watch 'elements', (n, o) ->
+      #   console.log elem.snabbt
+
+        # console.log 'new'
+        # console.log n
+        # console.log 'old'
+        # console.log o
+        # unless o.length > 0
+        #   # first load, animate in the nav
+        #   console.log element
+
+      # for the ghost hover state
+      scope.setGhost = (index) ->
+        scope.ghost = scope.offsets[index]
+      scope.resetGhost = ->
+        scope.ghost = null
+      scope.getGhostOffset = ->
+        return if scope.ghost then scope.ghost else scope.offsets[focus.index]

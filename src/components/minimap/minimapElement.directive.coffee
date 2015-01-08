@@ -2,7 +2,7 @@ angular.module 'skilltree'
   .directive 'minimapElement', ($document, $window, $timeout, MinimapAPI) ->
     restrict: 'A'
     link: (scope, element, attrs) ->
-      console.log "minimap directive: #{attrs.minimapElement} (#{attrs.minimapCount})"
+      # console.log "minimap directive: #{attrs.minimapElement} (#{attrs.minimapCount})"
 
       # create the element
       minimapElement = MinimapAPI.registerElement

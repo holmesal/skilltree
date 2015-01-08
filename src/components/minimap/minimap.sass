@@ -34,16 +34,16 @@ minimap
       border-radius: 1px
 
     .dot 
-      width: 5px
-      height: 5px
+      width: 4px
+      height: 4px
       background-color: white 
-      border-radius: 50%
+      border-radius: 2px
       float: left
       margin-left: 3px
       margin-right: 2px
       margin-bottom: 5px
       opacity: 0.2
-      transition: 0.2s ease-in-out opacity
+      transition: 0.1s ease-out opacity
       transition-delay: 0ms
 
     &.focus
@@ -52,12 +52,18 @@ minimap
 
   .arrow
     position: absolute
-    top: 7px
+    top: 18px //6px
     // margin-top: 3px
-    left: -20px
+    left: -25px
     width: 0
     height: 0
-    border-top: 5px solid transparent
-    border-bottom: 5px solid transparent 
+    border-top: 4px solid transparent
+    border-bottom: 4px solid transparent 
     border-left: 5px solid white
-    transition: 0.2s ease-in-out transform
+    transition: 0.1s ease-in-out transform
+
+    &.ghost
+      opacity: 0
+      transition: 0.1s linear transform
+      &.visible
+        opacity: 0.35

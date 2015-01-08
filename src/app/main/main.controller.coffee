@@ -15,6 +15,14 @@ angular.module "skilltree"
     $scope.skills = [
       name: 'AngularJS'
       projects: [
+        name: 'Skilltree'
+        description: 'A list of skills and corresponding github projects. The website you\'re looking at.'
+        source: 'http://github.com/holmesal/skilltree'
+        highlights: [
+          link: 'https://github.com/holmesal/skilltree/tree/master/src/components/minimap'
+          description: 'A side-mounted nav (inspired by Sublime Text\'s "minimap") that allows you to quickly jump around a page. Over there ------>'
+        ]
+      ,
         name: 'Hashtag'
         description: 'Realtime, IRC-like chat app'
         source: 'http://github.com/holmesal/hashtag'
@@ -56,14 +64,6 @@ angular.module "skilltree"
           description: '$q promises are used to wait for authentication and/or data from a specific firebase location, and then either abort the route change or complete it. If completed, the authenticated user and/or data is injected into the controller.'
         ]
         extras: ['CoffeeScript']
-      ,
-        name: 'Skilltree'
-        description: 'A guided tour of your github account. The website you\'re looking at.'
-        source: 'http://github.com/holmesal/skilltree'
-        highlights: [
-          link: 'https://github.com/holmesal/skilltree/tree/master/src/components/minimap'
-          description: 'A side-mounted nav (inspired by Sublime Text\'s "minimap") that allows you to quickly jump around a page. Toggle it by adding "?minimap=true" to your url.'
-        ]
       ]
     ,
       name: 'Famo.us'
