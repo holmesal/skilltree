@@ -1,11 +1,16 @@
-.mover(
-  ng-style="{transform: 'translateY('+offset+'px)'}"
+//- .mover(
+//-   ng-style="{transform: 'translateY('+offset+'px)'}"
+//- )
+.section(
+  ng-repeat="element in elements"
+  ng-click="element.setFocus()"
+  ng-class="{focus: $index == focus.index}"
 )
-  .section(
-    ng-repeat="skill in fakeSkills"
+  .name {{element.name}}
+  .dot(
+    ng-repeat="dot in element.dots"
+    ng-style="{'transitionDelay': $parent.$index == focus.index ? $index*50 + 'ms' : '0ms'}"
   )
-    .name {{skill.name}}
-    .line(
-      ng-repeat="project in skill.projects"
-    )
-.arrow
+.arrow(
+  ng-style="{transform: 'translateY('+offsets[focus.index]+'px)'}"
+)

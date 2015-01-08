@@ -1,55 +1,29 @@
 angular.module 'skilltree'
-  .directive 'minimap', ($interval, $window, MinimapAPI) ->
+  .directive 'minimap', ($interval, $timeout, $window, MinimapAPI) ->
     restrict: 'E'
     templateUrl: 'components/minimap/minimap.jade'
-    scope:
-      elements: '='
+    scope: {}
     link: (scope, elem, attrs) ->
-      # bind to an array of elements
-      # look up those elements to get
-      # set a minimap="AngularJS" tag on every element you want to track
-      # and a minimap-count="5" to count the subsections
-      # then this directive needs to somehow know about those other directives, and be able to pull them in. hmm....
+      console.log MinimapAPI
+      scope.elements = MinimapAPI.minimapElements
+      scope.focusIndex = MinimapAPI.focusIndex
+      scope.focus = MinimapAPI.focus
+      scope.offsets = []
 
-      # fake data for now to evaluate rendering speed
-      scope.fakeSkills = []
+      # console.log scope.focusIndex
 
-      for num in [1...20]
-        rand = Math.round Math.random()*10
-        skills = ['AngularJS', 'Firebase', 'NodeJS', 'Python', 'MongoDB', 'Express', 'PHP', 'Objective-C', 'Swift', 'Squirrel']
-        scope.fakeSkills.push
-          name: if num > 1 then skills[rand] else 'AngularJS'
-          projects: [1..rand]
-
-      interval = 2000
-
-      lastPos = 0
-
-      scope.offset = 0
+      scope.$watch 'focus', ->
+        console.log scope.focus
+        console.log 'focus test' + scope.focus.index
+      , true
 
       # $interval ->
+      #   console.log "scope.focusIndex = #{scope.focusIndex}"
+      # , 1000
 
+      # wait for the dom to calculate the offsets
+      $timeout ->
+        for section in elem[0].children
+          scope.offsets.push section.offsetTop
 
-      angular.element $window
-        .bind 'scroll', (ev) ->
-          newPos = -$window.scrollY
-          scope.offset = newPos/10
-          console.log "scroll to #{newPos}"
-          scope.$apply ->
-          # angular.element(elem[0].children[0]).snabbt
-          #   position: [0,newPos,0]
-          #   from_position: [0,lastPos,0]
-          #   duration: 20
-          #   easing: 'ease'
-          # lastPos = newPos
-        # , interval
-          # console.log 'omg did scroll'
-          # console.log $window.scrollY
-
-      # scope.$watch ->
-      #   console.log 'checking'
-      #   $window.screenTop
-      # , (newY) ->
-      #   console.log "scrolled to #{newY}"
-      # , true
-
+        # console.log scope.offsets

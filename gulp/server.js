@@ -32,7 +32,8 @@ function browserSyncInit(baseDir, files, browser) {
       ],
       routes: routes
     },
-    browser: browser
+    browser: browser,
+    notify: false
   }, function(err, bs){
     if (bs.options.urls.external){
       qrcode.generate(bs.options.urls.external);
