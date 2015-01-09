@@ -1,8 +1,17 @@
-angular.module "skilltree", ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'duScroll']
+angular.module "skilltree", [
+  'ngAnimate'
+  'ngCookies'
+  'ngTouch'
+  'ngSanitize'
+  'restangular'
+  'ui.router'
+  'ui.bootstrap'
+  'duScroll'
+  'angular-medium-editor']
   .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
     $stateProvider
       .state "home",
-        url: "/:scrollTo?minimap",
+        url: "/:scrollTo?edit",
         templateUrl: "app/main/main.jade",
         controller: "MainCtrl"
 

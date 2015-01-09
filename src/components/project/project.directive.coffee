@@ -7,6 +7,8 @@ angular.module 'skilltree'
     first: '='
   link: (scope, element, attrs) ->
 
+    scope.edit = $stateParams.edit
+
     $timeout ->
       if $stateParams.scrollTo is urlsafeFilter scope.project.name
         if scope.first
@@ -15,8 +17,13 @@ angular.module 'skilltree'
           offset = 20
         $document.scrollToElement element, offset, 1000
 
-    scope.open = (url) ->
+    scope.goto = (url) ->
       $window.open url, '_blank'
+
+    # This is necessary to prevent navigation on clicks in edit mode
+    # Technically, we could wrap the highlight in a conditional anchor element, but it duplicates the highlight template, which fattens up a part of this controller that's not quite big enough to break into a directive
+    scope.preventIfEdit = ($ev) ->
+      $ev.preventDefault()
 
     scope.$watch 'project.highlights', (highlights) ->
       for highlight in highlights

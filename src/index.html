@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="app/vendor.css">
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/medium-editor/dist/css/medium-editor.css" />
+    <link rel="stylesheet" href="../bower_components/medium-editor/dist/css/themes/default.css" />
     <!-- endbower -->
     <!-- endbuild -->
     
@@ -60,13 +62,20 @@
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="../bower_components/fastclick/lib/fastclick.js"></script>
     <script src="../bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="../bower_components/medium-editor/dist/js/medium-editor.js"></script>
+    <script src="../bower_components/angular-medium-editor/dist/angular-medium-editor.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,src}) scripts/app.js -->
     <!-- inject:js -->
-    <script src="components/urlsafe/urlsafe.filter.spec.js"></script>
     <script src="app/index.js"></script>
+    <script src="components/minimap/minimapElement.directive.js"></script>
+    <script src="components/minimap/minimapAPI.service.js"></script>
+    <script src="components/minimap/minimap.directive.spec.js"></script>
+    <script src="components/minimap/minimap.directive.js"></script>
+    <script src="app/main/main.controller.js"></script>
+    <script src="components/urlsafe/urlsafe.filter.spec.js"></script>
     <script src="components/urlsafe/urlsafe.filter.js"></script>
     <script src="components/skill/skill.directive.spec.js"></script>
     <script src="components/skill/skill.directive.js"></script>
@@ -75,14 +84,9 @@
     <script src="components/project/highlight.filter.spec.js"></script>
     <script src="components/project/highlight.filter.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
-    <script src="components/minimap/minimapElement.directive.js"></script>
-    <script src="components/minimap/minimapAPI.service.js"></script>
-    <script src="components/minimap/minimap.directive.spec.js"></script>
-    <script src="components/minimap/minimap.directive.js"></script>
-    <script src="app/main/main.controller.js"></script>
     <script src="components/minimap/snabbt.js"></script>
-    <script src="components/templates.js"></script>
     <script src="app/templates.js"></script>
+    <script src="components/templates.js"></script>
     <!-- endinject -->
 
     <!-- inject:partials -->

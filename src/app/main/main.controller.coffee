@@ -1,8 +1,5 @@
 angular.module "skilltree"
-  .controller "MainCtrl", ($scope, $window, $document, $stateParams) ->
-
-    # show or hide the minimap based on a query param
-    $scope.showMinimap = $stateParams.minimap
+  .controller "MainCtrl", ($scope, $window, $document) ->
 
     # console.log $stateParams
 

@@ -7,6 +7,20 @@ project
   $side: 20px
   $buttonRadius: 2px
   $zoom: 1.15
+  $faded: rgba(20,20,20,0.06)
+
+
+  // hide the outline for all editible elements
+  [medium-editor]
+    outline: none
+
+  // show that elements can be edited
+  .editable
+    &.edit // in the edit state
+      &:not(:focus) // when not in focus
+        &:hover
+          background-color: $faded
+          cursor: pointer
 
   .button
     @extend .family-light
@@ -49,6 +63,7 @@ project
         @extend .family-medium
         font-size: em(20px)
         margin-bottom: 5px
+        
 
       .description
         @extend .family-light
@@ -60,6 +75,7 @@ project
       float: right
       margin-top: 20px
       margin-right: $side
+      margin-bottom: 20px
       &.visible-xs
         float: none
         margin-top: 0px
@@ -131,7 +147,7 @@ project
       .extra 
         @extend .family-book
         float: left
-        background-color: rgba(20,20,20,0.06)
+        background-color: $faded
         border-radius: $buttonRadius
         padding-top: 5px
         padding-bottom: 5px
