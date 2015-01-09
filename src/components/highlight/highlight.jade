@@ -1,7 +1,4 @@
-.row.highlight(
-  zng-mouseover="mode = 'link'"
-  zng-mouseout="mode = 'text'"
-)
+.row.highlight
   a(
     ng-href="{{highlight.link}}"
     ng-click="preventIfEdit($event)"
@@ -22,18 +19,7 @@
             i.fa(
               ng-class="{'fa-folder-open-o': highlight.type == 'folder', 'fa-file-code-o': highlight.type == 'file', 'fa-external-link': !highlight.type}"
             )
-          span.editable(
-            ng-class="{edit:edit}"
-            ng-if="!edit || mode === 'text'"
-            ng-click="linkMode()") {{highlight.text}}
-          span.editable(
-            ng-if="edit && mode === 'link'"
-            ng-model="highlight.link"
-            ng-class="{edit:edit}"
-            medium-editor
-            data-disable-toolbar
-            options="{disableEditing: {{!edit}}, placeholder: 'Why is this code interesting?', disableReturn: true}"
-          )
+          span {{highlight.text}}
           span.lineNumber(ng-if="highlight.line") Line {{highlight.line}}
         p.description(
           ng-model="highlight.description"
