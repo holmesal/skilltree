@@ -1,26 +1,21 @@
+// show that elements can be edited
+.editable
+  &.edit // in the edit state
+    &:not(:focus) // when not in focus
+      &:hover
+        background-color: $faded
+        cursor: pointer
 project
   display: block
   background-color: white 
   border-radius: 4px
   padding-bottom: 25px
 
-  $side: 20px
-  $buttonRadius: 2px
-  $zoom: 1.15
-  $faded: rgba(20,20,20,0.06)
-
 
   // hide the outline for all editible elements
   [medium-editor]
     outline: none
 
-  // show that elements can be edited
-  .editable
-    &.edit // in the edit state
-      &:not(:focus) // when not in focus
-        &:hover
-          background-color: $faded
-          cursor: pointer
 
   .button
     @extend .family-light
@@ -39,7 +34,7 @@ project
       cursor: pointer
       color: white
       i
-        transform: scale($zoom)
+        transform: scale($buttonIconZoom)
         
 
     i.withText
@@ -95,49 +90,6 @@ project
     opacity: 0.25
 
   .bottom
-    .highlight
-      margin-top: 24px
-      .button
-        width: 39px
-        margin-left: 20px
-        i
-          transition: 0.1s ease-in-out transform
-      .info
-        text-align: left
-        padding-left: $side - 5
-        padding-right: $side
-        .file
-          @extend .family-medium
-          font-size: em(16px)
-          color: $blue
-          margin-bottom: 2px
-          i 
-            margin-right: 5px
-            font-size: em(12px)
-          .lineNumber
-            @extend .family-light
-            font-size: em(14px)
-            margin-left: 20px
-            color: $dark
-            opacity: 0.28
-        .description
-          @extend .family-light
-          font-size: em(14px)
-          color: $dark
-          opacity: 0.9
-          margin-bottom: 0px
-      &:hover
-        cursor: pointer
-        .button
-          // @extend .button:hover
-          background-color: $blue
-          cursor: pointer
-          color: white
-          i 
-            transform: scale($zoom)
-      .col-xs-12
-        .info 
-          padding-left: $side
 
     .extras 
       padding-left: $side 

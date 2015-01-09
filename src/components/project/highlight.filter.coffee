@@ -1,3 +1,5 @@
+# TO BE DEPRECATED
+
 angular.module 'skilltree'
   .filter 'highlight', () ->
     (input) ->

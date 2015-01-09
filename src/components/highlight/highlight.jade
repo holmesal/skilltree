@@ -1,0 +1,43 @@
+.row.highlight(
+  zng-mouseover="mode = 'link'"
+  zng-mouseout="mode = 'text'"
+)
+  a(
+    ng-href="{{highlight.link}}"
+    ng-click="preventIfEdit($event)"
+    target="_blank"
+  )
+    .hidden-xs.col-sm-1
+      .button(
+        ng-href="{{highlight.link}}"
+        target="_blank"
+      )
+        i.fa(
+          ng-class="{'fa-folder-open-o': highlight.type == 'folder', 'fa-file-code-o': highlight.type == 'file', 'fa-external-link': !highlight.type}"
+        )
+    .col-xs-12.col-sm-11
+      .info
+        p.file
+          span.visible-xs-inline
+            i.fa(
+              ng-class="{'fa-folder-open-o': highlight.type == 'folder', 'fa-file-code-o': highlight.type == 'file', 'fa-external-link': !highlight.type}"
+            )
+          span.editable(
+            ng-class="{edit:edit}"
+            ng-if="!edit || mode === 'text'"
+            ng-click="linkMode()") {{highlight.text}}
+          span.editable(
+            ng-if="edit && mode === 'link'"
+            ng-model="highlight.link"
+            ng-class="{edit:edit}"
+            medium-editor
+            data-disable-toolbar
+            options="{disableEditing: {{!edit}}, placeholder: 'Why is this code interesting?', disableReturn: true}"
+          )
+          span.lineNumber(ng-if="highlight.line") Line {{highlight.line}}
+        p.description(
+          ng-model="highlight.description"
+          ng-class="{edit:edit}"
+          medium-editor
+          data-disable-toolbar
+          options="{disableEditing: {{!edit}}, placeholder: 'Why is this code interesting?', disableReturn: true}")

@@ -20,17 +20,12 @@ angular.module 'skilltree'
     scope.goto = (url) ->
       $window.open url, '_blank'
 
-    # This is necessary to prevent navigation on clicks in edit mode
-    # Technically, we could wrap the highlight in a conditional anchor element, but it duplicates the highlight template, which fattens up a part of this controller that's not quite big enough to break into a directive
-    scope.preventIfEdit = ($ev) ->
-      $ev.preventDefault()
-
-    scope.$watch 'project.highlights', (highlights) ->
-      for highlight in highlights
-        lastSegment = highlight.link.split('/').pop()
-        if lastSegment.split('.').length > 1
-          # return src.coffee
-          highlight.type = 'file'
-        else
-          # return services/
-          highlight.type = 'folder'
+    # scope.$watch 'project.highlights', (highlights) ->
+    #   for highlight in highlights
+    #     lastSegment = highlight.link.split('/').pop()
+    #     if lastSegment.split('.').length > 1
+    #       # return src.coffee
+    #       highlight.type = 'file'
+    #     else
+    #       # return services/
+    #       highlight.type = 'folder'
