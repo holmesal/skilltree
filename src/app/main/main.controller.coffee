@@ -7,6 +7,7 @@ angular.module "skilltree"
 
     $scope.person =
       name: 'Alonso Holmes'
+      email: 'hire@alonso.io'
       photo: 'https://avatars3.githubusercontent.com/u/1147390?v=3&s=460'
     
     $scope.skills = [
@@ -21,7 +22,7 @@ angular.module "skilltree"
         ]
       ,
         name: 'Hashtag'
-        description: 'Realtime, IRC-like chat app'
+        description: 'Realtime, IRC-like chat app.'
         source: 'http://github.com/holmesal/hashtag'
         highlights: [
           link: 'https://github.com/holmesal/hashtag/blob/develop/Gruntfile.js#L695'
@@ -108,11 +109,11 @@ angular.module "skilltree"
       name: 'NodeJS'
       projects: [
         name: 'Fireman'
-        description: 'Easy push notifications for Firebase-powered apps.'
+        description: 'Push notification server for Firebase-powered apps.'
         source: 'https://github.com/holmesal/fireman'
         highlights: [
           link: 'https://github.com/holmesal/fireman/blob/master/server.coffee'
-          description: 'Fireman listens to a `pushQueue` at the root of your firebase. Any time an notification object is pushed into the queue, a push notification is sent to the appropriate device.'
+          description: 'Fireman listens to a `pushQueue` at the root of the firebase. Any time an notification object is pushed into the queue, a push notification is sent to the appropriate device.'
         ]
         extras: ['Dokku', 'CoffeScript']
       ,
@@ -127,6 +128,12 @@ angular.module "skilltree"
           description: 'Entry point. Keeps an eye on the github releases page, and downloads any new updates autonomously. Auto-updating is especially important when you\'re doing things like encasing Raspberry Pis in concrete walls.'
         ]
         extras: ['Raspberry Pi']
+      ,
+        name: 'Reactr'
+        description: 'The backend for the frontend for the internet of things.'
+        highlights: [
+
+        ]
       ,
         name: 'Marvin the Robot'
         description: 'A depressed, trash-picking-up robot powered by genetic algorithms.'
@@ -150,6 +157,28 @@ angular.module "skilltree"
         extras: ['Express', 'MongoDB', 'Mongoose', 'CoffeeScript']
       ]
     ,
+      name: 'BackboneJS'
+      projects: [
+        name: 'Reactr'
+        description: 'A frontend for the internet of things.'
+        source: 'https://github.com/holmesal/reactr/tree/master/builder/app/scripts'
+        highlights: [
+          link: 'https://github.com/holmesal/reactr/blob/master/builder/app/scripts/app.coffee'
+          description: 'Entry point for the controller builder interface.'
+        ,
+          link: 'https://github.com/holmesal/reactr/blob/master/builder/app/scripts/views/controller.coffee'
+          description: 'Backbone controller view, for managing groups of controls.'
+        ]
+      ,
+        name: 'Radius'
+        description: 'Pandora for local artists.'
+        source: 'https://github.com/holmesal/radiusv2'
+        highlights: [
+          link: 'https://github.com/holmesal/radiusv2/blob/master/frontend/js/views/player.js'
+          description: 'Backbone view responsible for managing the onscreen player, which streams audio from soundcloud.'
+        ]
+      ]
+    ,
       name: 'Python'
       projects: [
         name: 'Wanderlust'
@@ -167,13 +196,17 @@ angular.module "skilltree"
     ,
       name: 'Objective-C'
       projects: [
-        name: 'wtfBeacon'
-        description: 'Links iOS devices in the background.'
+        name: 'Shortwave'
+        description: 'A mobile chat room with a range of 100 feet.'
         source: 'https://gist.github.com/holmesal/104d1248482ee9caec44'
         highlights: [
           link: 'https://medium.com/@alonsoholmes/wtfbeacon-how-shortwave-works-e926813091af'
           description: 'Blog post on how wtfBeacon works.'
+        ,
+          link: 'https://gist.github.com/holmesal/104d1248482ee9caec44'
+          description: 'ESTransponder main class.'
         ]
+        extras: ['Firebase', 'Swift', 'iBeacons']
       ]
     ]
 

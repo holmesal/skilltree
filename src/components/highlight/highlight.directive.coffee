@@ -21,9 +21,20 @@ angular.module 'skilltree'
       scope.$watch 'highlight.link', (link) ->
         if link
           lastSegment = link.split('/').pop()
-          if lastSegment.split('.').length > 1
-            scope.highlight.type = 'file'
-            scope.highlight.text = lastSegment
+          if link.indexOf('github') isnt -1 and link.indexOf('gist') is -1
+            if lastSegment.split('.').length > 1
+              scope.highlight.icon = 'fa-file-code-o'
+              scope.highlight.text = lastSegment
+            else
+              scope.highlight.icon = 'fa-folder-open-o'
+              scope.highlight.text = "#{lastSegment}/"
           else
-            scope.highlight.type = 'folder'
-            scope.highlight.text = "#{lastSegment}/"
+            # some external link
+            scope.highlight.icon = 'fa-external-link'
+            scope.highlight.text = lastSegment
+
+          # prune and save any line numbers
+          split = scope.highlight.text.split '#L'
+          if split.length > 1
+            scope.highlight.text = split[0]
+            scope.highlight.line = split[1]

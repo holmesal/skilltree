@@ -24,7 +24,7 @@
   //   opacity: 0.9
 
 .personWrapper
-  // background-color: red
+  min-height: 200px
   .person
     text-align: center
     color: white
@@ -45,9 +45,26 @@
       margin-bottom: 17px
     .name 
       @extend .family-book
-      font-size: em(20px)
-      border-bottom: 1px solid rgba(255,255,255,0.8)
+      font-size: em(30px)
+      margin-bottom: 16px
+      // border-bottom: 1px solid rgba(255,255,255,0.8)
+      // display: inline-block
+
+    .email
+      $fontSize: 16px
+      @extend .family-light
       display: inline-block
+      font-size: em($fontSize)
+      border: 1px solid white
+      padding-top: 12px
+      padding-bottom: 12px
+      padding-right: 31px
+      i
+        margin-left: 19px
+        margin-right: 19px
+        min-height: $fontSize
+        min-width: $fontSize
+
 
 
 .madeWith

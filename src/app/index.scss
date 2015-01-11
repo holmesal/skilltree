@@ -54,10 +54,8 @@ a {
   &:hover,&:visited,&:link,&:active
   {
       text-decoration: none;
-  }
-  &:hover{
-    color: inherit;
-    text-decoration: none;
+      color: inherit;
+      outline: none;
   }
 }
 
@@ -69,7 +67,7 @@ a {
 @import 'main/main.sass';
 @import '../components/highlight/highlight.sass';
 @import '../components/minimap/minimap.sass';
-@import '../components/navbar/navbar.sass';
 @import '../components/project/project.sass';
+@import '../components/navbar/navbar.sass';
 @import '../components/skill/skill.sass';
 // endinjector

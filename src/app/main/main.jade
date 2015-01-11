@@ -13,10 +13,14 @@ div(
       ng-style="{height: height/2}"
     )
     .person
-      .photo(
-        ng-style="{backgroundImage: 'url('+person.photo+')'}"
-      )
+      //- .photo(
+        ng-style="{backgroundImage: 'url('+person.photo+')'}")
       p.name {{person.name}}
+      a.email(
+        ng-href="mailto:{{person.email}}"
+      )
+        i.fa.fa-paper-plane-o
+        span{{person.email}}
 
   skill(
     ng-repeat="skill in skills"
@@ -26,11 +30,10 @@ div(
     minimap-count="{{skill.projects.length}}"
   )
 
-  .madeWith made with 
+  .madeWith
     a(
-      href="http://skilltree.io"
-      target="_blank"
+      href="mailto:hire@alonso.io"
       id="madeWith"
-    ) ??? (launching soon)
+    ) hire@alonso.io
 
 minimap.hidden-xs.hidden-sm
