@@ -12,12 +12,16 @@
     .file
       @extend .editable
       @extend .family-medium
+      min-height: 22px
       font-size: em(16px)
       color: $blue
       margin-bottom: 2px
       i 
         margin-right: 5px
         font-size: em(12px)
+      span.editable
+        display: block
+        min-width: 250px
       .lineNumber
         @extend .family-light
         font-size: em(14px)
@@ -26,6 +30,7 @@
         opacity: 0.28
     .description
       @extend .family-light
+      min-height: 22px
       font-size: em(14px)
       color: $dark
       opacity: 0.9

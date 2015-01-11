@@ -14,15 +14,16 @@ angular.module 'skilltree'
       scope.preventIfEdit = ($ev) ->
         # hack to still allow clicks on the side element. definitely a better way to do this.
         if scope.edit and $ev.target.classList[0] not in ['button', 'fa']
-          console.log 'preventing'
+          # console.log 'preventing'
           $ev.preventDefault()
 
       # any time the highlight link changes, try to figure out what it is
       scope.$watch 'highlight.link', (link) ->
-        lastSegment = link.split('/').pop()
-        if lastSegment.split('.').length > 1
-          scope.highlight.type = 'file'
-          scope.highlight.text = lastSegment
-        else
-          scope.highlight.type = 'folder'
-          scope.highlight.text = "#{lastSegment}/"
+        if link
+          lastSegment = link.split('/').pop()
+          if lastSegment.split('.').length > 1
+            scope.highlight.type = 'file'
+            scope.highlight.text = lastSegment
+          else
+            scope.highlight.type = 'folder'
+            scope.highlight.text = "#{lastSegment}/"

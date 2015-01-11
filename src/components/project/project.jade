@@ -36,17 +36,35 @@
     ng-repeat="highlight in project.highlights"
     highlight="highlight"
   )
-      
+
+  //- add a highlight
+  .row.highlight.prompt(
+    ng-if="edit"
+    ng-click="addHighlight()"
+  )
+    .hidden-xs.col-sm-1
+      .button
+        i.fa.fa-plus
+    .col-xs-12.col-sm-11
+      .info
+        p.file
+          span.visible-xs-inline
+            i.fa.fa-plus
+          span add a link to a file or folder on github
+
+  //- extras
   .row
     .col-xs-12
       .extras
         .extra(
           ng-repeat="extra in project.extras"
         ) {{extra}}
-        .extra.add(
-          ng-if="edit"
-          ng-model="extraToAdd"
-          medium-editor
-          data-disable-toolbar
-          options="{placeholder: 'add', disableReturn: true}")
-        )+
+
+        //- Add an extra
+        //- .extra.add(
+        //-   ng-if="edit"
+        //-   ng-model="extraToAdd"
+        //-   medium-editor
+        //-   data-disable-toolbar
+        //-   options="{placeholder: 'add', disableReturn: true}")
+        //- )+

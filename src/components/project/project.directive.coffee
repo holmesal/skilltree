@@ -20,6 +20,10 @@ angular.module 'skilltree'
     scope.goto = (url) ->
       $window.open url, '_blank'
 
+    scope.addHighlight = ->
+      console.log 'adding highlight'
+      scope.project.highlights.push {}
+
     # scope.$watch 'project.highlights', (highlights) ->
     #   for highlight in highlights
     #     lastSegment = highlight.link.split('/').pop()
