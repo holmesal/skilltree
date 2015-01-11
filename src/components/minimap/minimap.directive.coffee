@@ -14,22 +14,8 @@ angular.module 'skilltree'
         for section in elem[0].children
           scope.offsets.push section.offsetTop
 
-      # elem.snabbt
-
       $timeout ->
         scope.focus = MinimapAPI.focus
-        
-      # when elements are populated, animate in the navigation
-      # scope.$watch 'elements', (n, o) ->
-      #   console.log elem.snabbt
-
-        # console.log 'new'
-        # console.log n
-        # console.log 'old'
-        # console.log o
-        # unless o.length > 0
-        #   # first load, animate in the nav
-        #   console.log element
 
       # for the ghost hover state
       scope.setGhost = (index) ->

@@ -51,7 +51,7 @@ angular.module "skilltree"
           link: 'https://github.com/holmesal/switchboard/tree/master/src/components/freespace'
           description: 'Directive to visually represent the number of synths and samples loaded, and the available slots remaining. The basis for fa-meter.'
         ]
-        extras: ['Atom-Shell', 'Gulp']
+        extras: ['Atom-Shell', 'Gulp', 'SASS', 'Coffeescript']
       ,
         name: 'Firesolver'
         description: 'Directive to make route changes contingent on firebase.'
@@ -164,17 +164,17 @@ angular.module "skilltree"
         ]
         extras: ['Google App Engine', 'Open Street Maps']
       ]
-    # ,
-    #   name: 'Objective-C'
-    #   projects: [
-    #     name: 'wtfBeacon'
-    #     description: 'Links iOS devices in the background.'
-    #     source: 'https://gist.github.com/holmesal/104d1248482ee9caec44'
-    #     highlights: [
-    #       link: 'https://medium.com/@alonsoholmes/wtfbeacon-how-shortwave-works-e926813091af'
-    #       description: 'Blog post on how wtfBeacon works.'
-    #     ]
-    #   ]
+    ,
+      name: 'Objective-C'
+      projects: [
+        name: 'wtfBeacon'
+        description: 'Links iOS devices in the background.'
+        source: 'https://gist.github.com/holmesal/104d1248482ee9caec44'
+        highlights: [
+          link: 'https://medium.com/@alonsoholmes/wtfbeacon-how-shortwave-works-e926813091af'
+          description: 'Blog post on how wtfBeacon works.'
+        ]
+      ]
     ]
 
     # for num in [1...7]

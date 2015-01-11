@@ -16,9 +16,7 @@ angular.module 'skilltree'
         @dots = [0...options.count]
 
       setFocus: ->
-        # console.log "focus has been set to #{@name}"
         focus.index = minimapElements.indexOf @
-        # console.log "focus index is now #{focus.index}"
         lock = true
         $document.scrollToElement @element, 50, 1000
         .then ->
@@ -27,7 +25,6 @@ angular.module 'skilltree'
       update: ->
         unless lock
           focus.index = minimapElements.indexOf @
-          # console.log 'update called for ' + @name + " with set focus #{focus.index}"
 
     registerElement: (options) ->
       newElem = new MinimapElement options
