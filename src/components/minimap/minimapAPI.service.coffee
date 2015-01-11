@@ -18,9 +18,15 @@ angular.module 'skilltree'
       setFocus: ->
         focus.index = minimapElements.indexOf @
         lock = true
-        $document.scrollToElement @element, 50, 1000
-        .then ->
-          lock = false
+        # scroll to 0 if this is the first element
+        if focus.index is 0
+          $document.scrollTo 0,0, 1000
+          .then ->
+            lock = false
+        else
+          $document.scrollToElement @element, 50, 1000
+          .then ->
+            lock = false
 
       update: ->
         unless lock
