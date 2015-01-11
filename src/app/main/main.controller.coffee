@@ -18,7 +18,7 @@ angular.module "skilltree"
         source: 'http://github.com/holmesal/skilltree'
         highlights: [
           link: 'https://github.com/holmesal/skilltree/tree/master/src/components/minimap'
-          description: 'A side-mounted nav (inspired by Sublime Text\'s "minimap") that allows you to quickly jump around a page. Over there ------>'
+          description: 'A side-mounted nav (inspired by Sublime Text\'s "minimap") that allows you to quickly jump around a page. Over there (if you\'re on desktop) ------>'
         ]
       ,
         name: 'Hashtag'
