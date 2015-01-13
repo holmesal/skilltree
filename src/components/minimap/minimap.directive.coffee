@@ -8,6 +8,10 @@ angular.module 'skilltree'
       
       scope.offsets = []
 
+      scope.setFocus = (element) ->
+        element.setFocus()
+        ga('send', 'event', 'button', 'navClick', element.name)
+
 
       # wait for the dom to calculate the offsets
       $timeout ->

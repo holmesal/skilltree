@@ -3,7 +3,7 @@
 //- )
 .section(
   ng-repeat="element in elements"
-  ng-click="element.setFocus()"
+  ng-click="setFocus(element)"
   ng-class="{focus: $index == focus.index}"
   ng-mouseenter="setGhost($index)"
   ng-mouseleave="resetGhost()"
