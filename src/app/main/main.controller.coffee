@@ -20,6 +20,7 @@ angular.module "skilltree"
           link: 'https://github.com/holmesal/skilltree/tree/master/src/components/minimap'
           description: 'A side-mounted nav (inspired by Sublime Text\'s "minimap") that allows you to quickly jump around a page. Over there (if you\'re on desktop) ------>'
         ]
+        extras: ['Gulp', 'SASS', 'Firebase']
       ,
         name: 'Hashtag'
         description: 'Realtime, IRC-like chat app.'
