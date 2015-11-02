@@ -37,6 +37,21 @@ html {
   background-image: radial-gradient(circle at 50% -10%, #738B97, transparent), radial-gradient(circle at 50% 110%, #5E747F, transparent);
   min-width: 100%;
   min-height: 100%;
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 1px;
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar {
+      width:  10px;
+      margin: 5px;
+  }
 }
 
 body {

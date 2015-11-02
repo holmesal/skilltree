@@ -7,10 +7,76 @@ angular.module "skilltree"
 
     $scope.person =
       name: 'Alonso Holmes'
-      email: 'hire@alonso.io'
+      email: 'hello@alonso.io'
       photo: 'https://avatars3.githubusercontent.com/u/1147390?v=3&s=460'
     
     $scope.skills = [
+      name: 'React Native'
+      projects: [
+        name: 'Toshi'
+        description: 'A sample project to demonstrate React Native and Redux.'
+        source: 'http://github.com/holmesal/toshi'
+        highlights: [
+          link: 'https://github.com/holmesal/toshi/blob/master/src/actions/cryptocurrencies.js#L38'
+          description: 'Asynchronous redux actions using redux-thunk middleware.'
+        ,
+          link: 'https://github.com/holmesal/toshi/blob/master/ios/MTAudio.swift'
+          description: 'Example Swift audio-playing component (MTAudio).'
+        ,
+          link: 'https://github.com/holmesal/toshi/blob/master/src/components/currencyList.js#L10'
+          description: 'An es6 react component @decorated with a reselect selector.'
+        ,
+          link: 'https://github.com/holmesal/toshi/blob/master/src/selectors/cryptocurrencies.js#L7'
+          description: 'A memoized reselect selector, which sites between the redux store and a component.'
+        ]
+        extras: ['Swift', 'Objective-C', 'ES6', 'iOS Audio']
+      ,
+        name: 'react-native-firebase'
+        description: 'A react-native module that wraps the native firebase iOS SDK'
+        source: 'https://github.com/holmesal/react-native-firebase'
+        highlights: [
+          link: 'https://github.com/holmesal/react-native-firebase/blob/master/RNFirebase/RNFirebase.swift'
+          description: 'Swift implementation - wraps the native iOS Firebase and Facebook SDKs'
+        ,
+          link: 'https://github.com/holmesal/react-native-firebase/blob/master/RNFirebase.js'
+          description: 'The JS side of RNFirebase - wraps the native JS firebase SDK and proxies certain operations over the bridge.'
+        ]
+        extras: ['Swift', 'Objective-C', 'ES6', 'Firebase', 'Facebook']
+      ]
+    ,
+      name: 'React'
+      projects: [
+        name: 'react-completion'
+        description: 'Get completion suggestions in-line, as you type.'
+        source: 'https://github.com/holmesal/react-completion'
+        highlights: [
+          link: 'http://holmesal.github.io/react-completion'
+          description: 'Live demo'
+        ,
+          link: 'https://github.com/holmesal/react-completion/blob/master/examples/app.jsx'
+          description: 'Example usage'
+        ,
+          link: 'https://github.com/holmesal/react-completion/blob/master/react-completion.cjsx'
+          description: 'Implementation, in CJSX (coffeescript + jsx)'
+        ]
+        extras: ['React', 'Webpack', 'Coffeescript', 'CJSX']
+      ,
+        name: 'podcastfoo'
+        description: 'social podcast listening'
+        source: 'https://github.com/holmesal/podcastfoo'
+        highlights: [
+          link: 'http://podcastfoo.firebaseapp.com'
+          description: 'Listen in your browser & download the desktop app.'
+        ,
+          link: 'https://github.com/holmesal/podcastfoo/blob/master/src/stores/player-store.coffee'
+          description: 'Biff store for the audio player.'
+        ,
+          link: 'https://github.com/holmesal/podcastfoo/blob/master/src/components/player/player.cjsx#L33'
+          description: 'Store mixed in to component.'
+        ]
+        extras: ['React', 'Coffeescript', 'CJSX', 'Flux', 'Biff']
+      ]
+    ,
       name: 'AngularJS'
       projects: [
         name: 'Skilltree'
@@ -130,12 +196,6 @@ angular.module "skilltree"
         ]
         extras: ['Raspberry Pi']
       ,
-        name: 'Reactr'
-        description: 'The backend for the frontend for the internet of things.'
-        highlights: [
-
-        ]
-      ,
         name: 'Marvin the Robot'
         description: 'A depressed, trash-picking-up robot powered by genetic algorithms.'
         source: 'https://github.com/holmesal/marvintherobot'
@@ -193,6 +253,27 @@ angular.module "skilltree"
           description: 'Geohashes are used to project vector data (in latitude/longiture or UTM) onto discrete "blocks" for use in-game.'
         ]
         extras: ['Google App Engine', 'Open Street Maps']
+      ]
+    ,
+      name: 'Swift'
+      projects: [
+        name: 'react-native-firebase'
+        description: 'A react-native module that wraps the native firebase iOS SDK'
+        source: 'https://github.com/holmesal/react-native-firebase'
+        highlights: [
+          link: 'https://github.com/holmesal/react-native-firebase/blob/master/RNFirebase/RNFirebase.swift'
+          description: 'Swift implementation - wraps the native iOS Firebase and Facebook SDKs'
+        ]
+        extras: ['Swift', 'Objective-C', 'ES6', 'Firebase', 'Facebook']
+      ,
+        name: 'MTAudio'
+        description: 'Buffers and streams audio by wrapping StreamingKit'
+        source: 'https://github.com/holmesal/toshi/blob/master/ios/MTAudio.swift'
+        highlights: [
+          link: 'https://github.com/holmesal/toshi/blob/master/ios/MTAudio.swift'
+          description: 'MTAudio Swift implementation'
+        ]
+        extras: ['StreamingKit', 'iOS Audio']
       ]
     ,
       name: 'Objective-C'

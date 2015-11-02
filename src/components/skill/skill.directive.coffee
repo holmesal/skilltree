@@ -12,7 +12,7 @@ angular.module 'skilltree'
 
 
     scope.$watch 'skill.projects', (projects) ->
-      scope.count = "#{projects.length} project"
+      scope.count = "#{projects.length} public project"
       unless projects.length is 1
         scope.count += 's'
     , true
